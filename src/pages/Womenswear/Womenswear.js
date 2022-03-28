@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WomensWear = () => {
-  return <div>응애</div>;
+  return <div>응응애애</div>;
 };
 
 export default WomensWear;
