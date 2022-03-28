@@ -10,29 +10,13 @@
   justify-content: space-between;
   align-items: center;
 }
-// 그레이
-.gray {
-  color: #8e8e8e;
-}
 
-.muziRed {
-  #7f0019 붉은색
-}
+$muziRed: #7f0019;
 
-.muziLightGray {
-  #cccccc
-}
+$muziLightGray: #cccccc;
 
+$muziDarkGray: #666666;
 
-.muziDarkGray {
-  #666666
-}
+$muziIvory: #faf7eb;
 
-.muziIvory {
-#faf7eb
-}
-
-.muziGray {
-  #999999
-}
-
+$muziGray: #999999;
