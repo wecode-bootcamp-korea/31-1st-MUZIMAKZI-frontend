@@ -1,4 +1,9 @@
 @import './variables.scss';
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
 .conatainer {
   max-width: 900px;
   width: 100%;

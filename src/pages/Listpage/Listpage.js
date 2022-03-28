@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Listpage = () => {
-  return <div></div>;
+const ListPage = () => {
+  return <div>응애</div>;
 };
 
-export default Listpage;
+export default ListPage;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Detailpage = () => {
-  return <div></div>;
+const DetailPage = () => {
+  return <div>응애</div>;
 };
 
-export default Detailpage;
+export default DetailPage;

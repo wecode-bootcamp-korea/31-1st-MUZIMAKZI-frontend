@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Landingpage = () => {
-  return <div></div>;
+const LandingPage = () => {
+  return <div>응애</div>;
 };
 
-export default Landingpage;
+export default LandingPage;

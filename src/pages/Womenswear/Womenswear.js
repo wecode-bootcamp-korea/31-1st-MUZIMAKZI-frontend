@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Womenswear = () => {
-  return <div></div>;
+const WomensWear = () => {
+  return <div>응애</div>;
 };
 
-export default Womenswear;
+export default WomensWear;
