@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 // @mixin flex
 
 @mixin flexCenter {
@@ -12,3 +10,29 @@
   justify-content: space-between;
   align-items: center;
 }
+// 그레이
+.gray {
+  color: #8e8e8e;
+}
+
+.muziRed {
+  #7f0019 붉은색
+}
+
+.muziLightGray {
+  #cccccc
+}
+
+
+.muziDarkGray {
+  #666666
+}
+
+.muziIvory {
+#faf7eb
+}
+
+.muziGray {
+  #999999
+}
+
