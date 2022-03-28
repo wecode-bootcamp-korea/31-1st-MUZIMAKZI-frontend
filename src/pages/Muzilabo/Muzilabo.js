@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Muzilabo = () => {
+const MuziLabo = () => {
   return <div>응애</div>;
 };
 
-export default Muzilabo;
+export default MuziLabo;

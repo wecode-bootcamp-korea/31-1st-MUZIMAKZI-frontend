@@ -8,18 +8,20 @@ import Signup from './pages/LoginSignup/Signup/Signup';
 import MensWear from './pages/MensWear/MensWear';
 import WomensWear from './pages/WomensWear/WomensWear';
 import LandingPage from './pages/LandingPage/LandingPage';
+import MuziLabo from './pages/MuziLabo/MuziLabo';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/CartPage" element={<CartPage />} />
-        <Route path="/DetailPage" element={<DetailPage />} />
-        <Route path="/ListPage" element={<ListPage />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/MensWear" element={<MensWear />} />
-        <Route path="/WomenSwear" element={<WomensWear />} />
+        <Route path="/cart-page" element={<CartPage />} />
+        <Route path="/detail-page" element={<DetailPage />} />
+        <Route path="/list-page" element={<ListPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/mens-wear" element={<MensWear />} />
+        <Route path="/womens-wear" element={<WomensWear />} />
+        <Route path="/muzi-labo" element={<MuziLabo />} />
         <Route path="/" element={<LandingPage />} />
       </Routes>
     </BrowserRouter>
