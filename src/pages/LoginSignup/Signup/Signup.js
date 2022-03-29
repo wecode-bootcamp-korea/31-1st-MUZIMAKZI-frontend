@@ -70,7 +70,7 @@ const Signup = () => {
           }}
         />
         <button className="loginBtn" type="submit" disabled={!isActice}>
-          로그인
+          회원가입
         </button>
       </form>
     </div>
