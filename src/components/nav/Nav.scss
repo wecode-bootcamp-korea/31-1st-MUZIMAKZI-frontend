@@ -1,0 +1,106 @@
+@import '../../styles/variables.scss';
+.Nav {
+  justify-items: center;
+  width: 100%;
+  @include flexCenter;
+  // div {
+  //   width: 1060px;
+  //   margin: auto;
+  //   position: relative;
+  .navTop {
+    width: 1060px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    // justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .Logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // margin-left: 10px;
+
+      .muziLogo {
+        font-size: 50px;
+        font-weight: 900;
+      }
+
+      .SideLogoImg {
+        width: 60px;
+        height: 20px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+      }
+    }
+    .navSearch {
+      display: flex;
+      position: relative;
+      border: 2px solid darkgray;
+      border-radius: 5px;
+      padding: 7px 20px;
+      input {
+        width: 530px;
+        border: none;
+      }
+      img {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 7px;
+      }
+    }
+
+    .linkItem {
+      .btnLogin {
+        background: url('../../../public/images/nav/login.png') no-repeat center;
+        background-size: 23px;
+      }
+
+      .btnMypage {
+        background: url('../../../public/images/nav/user.png') no-repeat center;
+        background-size: 25px;
+      }
+      .btnCart {
+        background: url('../../../public/images/nav/shopping-bag.png') no-repeat
+          center;
+        background-size: 24px;
+      }
+      button {
+        padding: 20px;
+      }
+
+      button {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  // .navBottom {
+  //   border-top: 1px solid lightgray;
+  //   border-bottom: 1px solid lightgray;
+
+  .inner {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    width: 100vw;
+    font-weight: bold;
+    li {
+      position: relative;
+      margin: 0 20px;
+      height: 45px;
+      &:hover {
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+  // }
+  // }
+  // }
+  // }
+}
