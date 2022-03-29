@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
 import Detail from './pages/Detail/Detail';
 import List from './pages/List/List';
-import Login from './pages/LoginSignup/Login/Login';
+import LoginSignup from './pages/LoginSignup/LoginSignup';
 import Signup from './pages/LoginSignup/Signup/Signup';
 import Mens from './pages/Mens/Mens';
 import Womens from './pages/Womens/Womens';
@@ -17,7 +17,7 @@ const Router = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/list" element={<List />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/loginsingup" element={<LoginSignup />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mens" element={<Mens />} />
         <Route path="/womens" element={<Womens />} />
