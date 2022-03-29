@@ -1,28 +1,28 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CartPage from './pages/CartPage/CartPage';
-import DetailPage from './pages/DetailPage/DetailPage';
-import ListPage from './pages/ListPage/ListPage';
+import Cart from './pages/Cart/Cart';
+import Detail from './pages/Detail/Detail';
+import List from './pages/List/List';
 import Login from './pages/LoginSignup/Login/Login';
 import Signup from './pages/LoginSignup/Signup/Signup';
-import MensWear from './pages/MensWear/MensWear';
-import WomensWear from './pages/WomensWear/WomensWear';
-import LandingPage from './pages/LandingPage/LandingPage';
-import MuziLabo from './pages/MuziLabo/MuziLabo';
+import Mens from './pages/Mens/Mens';
+import Womens from './pages/Womens/Womens';
+import Landing from './pages/Landing/Landing';
+import Labo from './pages/Labo/Labo';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/cart-page" element={<CartPage />} />
-        <Route path="/detail-page" element={<DetailPage />} />
-        <Route path="/list-page" element={<ListPage />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/list" element={<List />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/mens-wear" element={<MensWear />} />
-        <Route path="/womens-wear" element={<WomensWear />} />
-        <Route path="/muzi-labo" element={<MuziLabo />} />
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/mens" element={<Mens />} />
+        <Route path="/womens" element={<Womens />} />
+        <Route path="/labo" element={<Labo />} />
+        <Route path="/" element={<Landing />} />
       </Routes>
     </BrowserRouter>
   );
