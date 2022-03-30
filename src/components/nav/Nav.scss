@@ -1,18 +1,14 @@
 @import '../../styles/variables.scss';
 .Nav {
+  @include flexCenter;
   justify-items: center;
   width: 100%;
-  @include flexCenter;
-  // div {
-  //   width: 1060px;
-  //   margin: auto;
-  //   position: relative;
+
   .navTop {
     width: 1060px;
     display: flex;
     justify-content: space-between;
     margin: auto;
-    // justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 
@@ -20,7 +16,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      // margin-left: 10px;
 
       .muziLogo {
         font-size: 50px;
@@ -77,10 +72,6 @@
     }
   }
 
-  // .navBottom {
-  //   border-top: 1px solid lightgray;
-  //   border-bottom: 1px solid lightgray;
-
   .inner {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
@@ -99,8 +90,4 @@
       }
     }
   }
-  // }
-  // }
-  // }
-  // }
 }

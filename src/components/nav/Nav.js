@@ -51,21 +51,11 @@ const Nav = () => {
     );
   });
 
-  // {innerList.map(inner => {
-  //   return (
-  //     <li className='inner'>
-  //       id={inner.id}
-
-  //     </li>
-  //   )
-  // })
-
   return (
     <nav className="Nav">
       <div className="NavBox">
         <div className="navTop">
           <a href="/" className="Logo">
-            {/* //fix a태그 경로  */}
             <span className="muziLogo">MUZI</span>
             <img
               src="images/nav/MUZISIDE.png"
@@ -83,46 +73,8 @@ const Nav = () => {
             <button type="button" className="btnCart" src="/" />
           </div>
         </div>
-
         <div className="navBottom">
-          <ul className="inner">
-            {innerList}
-            {/* <li>
-              <Link to="/" title="인기상품">
-                인기상품
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="신상품">
-                신상품
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="온라인 한정사이즈">
-                온라인 한정사이즈
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="가격 인하">
-                가격 인하
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="기간 한정">
-                기간 한정
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="의복잡화 아울렛">
-                의복잡화 아울렛
-              </Link>
-            </li>
-            <li>
-              <Link to="/" title="생활잡화 아울렛">
-                생활잡화 아울렛
-              </Link>
-            </li> */}
-          </ul>
+          <ul className="inner">{innerList}</ul>
         </div>
       </div>
     </nav>
