@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Mens.scss';
-import MensList from './MensList';
-import './MensList.scss';
+import MensList from './MensComponent/MensList';
+import './MensComponent/MensList.scss';
 const Mens = () => {
   const [mensListArray, setMensListArray] = useState();
 
