@@ -1,0 +1,13 @@
+.landingImg {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+
+  img {
+    width: 1500px;
+    height: 600px;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
