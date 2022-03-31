@@ -1,56 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
-import './List.scss';
+import React from 'react';
 
 const List = () => {
-  const [ItemInfo, setItemInfo] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3000/data/MockData.json')
-      .then(res => res.json())
-      .then(data => setItemInfo(data));
-  }, []);
-
-  return (
-    <div className="List">
-      <div className="container">
-        <h4>남성니트</h4>
-        <p>
-          총 <strong>100개</strong>의 상품이 있습니다.
-        </p>
-        <div className="selectBox">
-          <div className="selectScroll">
-            <span>컬러</span>
-            <span>사이즈</span>
-          </div>
-          <ul className="selectText">
-            <li>
-              <b>인기순</b>
-            </li>
-            <li>
-              <b>신상품순</b>
-            </li>
-            <li>
-              <b>낮은가격순</b>
-            </li>
-            <li>
-              <b>높은가격순</b>
-            </li>
-            <li>추천상품순</li>
-          </ul>
-          <ul className="selectBtnGroup">
-            <li className="imageBtn"></li>
-            <li className="imageListBtn"></li>
-            <li className="more">50</li>
-          </ul>
-        </div>
-        <div className="ItemList">
-          {ItemInfo.map(item => (
-            <ItemList key={item.id} {...item} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <div>무지막지</div>;
 };
 export default List;

@@ -7,13 +7,13 @@ const Labo = () => {
     <div className="Labo">
       <div className="container">
         <div className="laboImg">
-          <img src="/images/listpage/무지막지1.jpg" alt="MUJI MAKJI" />
+          <img src="/images/listpage/무지막지1.jpg" alt="MUZI MAKZI" />
         </div>
         <div className="labo">
           <img
             className="laboImg"
             src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="MUJI MAKJI"
+            alt="MUZI MAKZI"
           />
           <h4 className="laboTitle">무지막지</h4>
           <div className="laboFlex">
@@ -33,7 +33,7 @@ const Labo = () => {
         </div>
         <div className="viewProductBox">
           <Link to="/list" className="viewProductBtn">
-            MUJI MAKJI 상품 보러가기
+            MUZI MAKZI 상품 보러가기
           </Link>
         </div>
       </div>
