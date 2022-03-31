@@ -13,8 +13,9 @@ const LoginSignup = () => {
   });
 
   const [signUpInput, setSignUpInput] = useState({
-    name: '',
-    phone: '',
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
     email: '',
     password: '',
   });
@@ -26,19 +27,20 @@ const LoginSignup = () => {
     console.log(token);
   };
 
-  const checkSignInInput = () => {
-    const check =
-      signInInput.email.indexOf('@') === -1 || signInInput.password.length < 5;
-    setIsActice(!check);
-  };
-  const checkSignUpInput = () => {
-    const check =
-      signUpInput.email.indexOf('@') === -1 || signUpInput.password.length < 5;
-    setIsActice(!check);
-  };
+  // const checkSignInInput = () => {
+  //   const check =
+  //     signInInput.email.includes('@' && '.com') &&
+  //     signInInput.password.length >= 5;
+  //   setIsActice(!check);
+  // };
+  // const checkSignUpInput = () => {
+  //   const check =
+  //     signUpInput.email.indexOf('@') === -1 || signUpInput.password.length < 5;
+  //   setIsActice(!check);
+  // };
 
   const signInCommunication = () => {
-    fetch('http://10.58.7.81:8000/users/signin', {
+    fetch('http://10.58.4.74:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: signInInput.email,
@@ -53,18 +55,18 @@ const LoginSignup = () => {
   };
 
   const signUpCommunication = () => {
-    fetch('http://10.58.7.81:8000/users/signup', {
+    fetch('http://10.58.4.74:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        name: signInInput.name,
-        email: signInInput.email,
-        password: signInInput.password,
-        phone: signInInput.phone,
+        first_name: signUpInput.firstName,
+        last_name: signUpInput.lastName,
+        email: signUpInput.email,
+        password: signUpInput.password,
+        phone_number: signUpInput.phoneNumber,
       }),
     })
       .then(response => response.json())
-      .then(result => alert(result.message));
-    console.log('회원가입 통신');
+      .then(result => console(result));
   };
 
   const handleSignInInput = e => {
@@ -80,7 +82,8 @@ const LoginSignup = () => {
   const handleLoginTabButton = () => {
     setMenuTab('로그인');
     setSignUpInput({
-      name: '',
+      first_name: '',
+      last_name: '',
       phone: '',
       email: '',
       password: '',
@@ -143,11 +146,15 @@ const LoginSignup = () => {
 
 const SIGNUP_DATA = [
   {
-    type: 'name',
+    type: 'firstName',
+    text: '성',
+  },
+  {
+    type: 'lastName',
     text: '이름',
   },
   {
-    type: 'phone',
+    type: 'phoneNumber',
     text: '전화번호',
   },
   {
