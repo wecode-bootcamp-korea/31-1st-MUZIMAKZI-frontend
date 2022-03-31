@@ -7,18 +7,15 @@ const Labo = () => {
     <div className="Labo">
       <div className="container">
         <div className="laboImg">
-          <img
-            src="http://image.mujikorea.net/display/corner/454/2021-02-15_labo_image_title.jpg"
-            alt="LABO"
-          />
+          <img src="/images/listpage/무지막지1.jpg" alt="MUJI MAKJI" />
         </div>
         <div className="labo">
           <img
-            className="laboImg_2"
-            src="http://image.mujikorea.net/display/corner/454/220204labo.jpg"
-            alt="LABO"
+            className="laboImg"
+            src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt="MUJI MAKJI"
           />
-          <span className="laboTitle">무지막지</span>
+          <h4 className="laboTitle">무지막지</h4>
           <div className="laboFlex">
             <p className="laboText">
               무지막지한 사람들의 사이트 입니다. <br />
@@ -35,9 +32,9 @@ const Labo = () => {
           </div>
         </div>
         <div className="viewProductBox">
-          <div className="viewProductBtn">
-            <Link to="/List">MUJI MAKJI 상품 보러가기</Link>
-          </div>
+          <Link to="/list" className="viewProductBtn">
+            MUJI MAKJI 상품 보러가기
+          </Link>
         </div>
       </div>
     </div>

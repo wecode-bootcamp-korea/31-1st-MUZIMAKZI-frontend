@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Mens = () => {
-  return <div>dsdsadsa</div>;
+  return <div></div>;
 };
 
 export default Mens;

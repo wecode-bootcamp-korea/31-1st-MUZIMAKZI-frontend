@@ -1,57 +1,57 @@
-@import '../../styles/common.scss';
-@import '../../styles/reset.scss';
+@import '../../styles/variables.scss';
 
 .Labo {
   width: 100%;
   text-align: center;
+
   .container {
     position: relative;
-    width: 1060px;
-    margin: auto;
+    @include defaultWidth;
+
     img {
       width: 760px;
     }
+
     .labo {
       img {
         width: 760px;
       }
+
       .laboTitle {
         position: absolute;
-        top: 810px;
+        top: 860px;
         left: 200px;
         font-size: 70px;
         font-weight: 400;
       }
+
       .laboFlex {
         display: flex;
         justify-content: space-between;
         margin-bottom: 100px;
+
         .laboText {
           margin: 65px 0 0 200px;
-          font-size: 14px;
-          text-align: left;
+          @include font(14px);
         }
+
         .laboSize {
           margin: 65px 200px 0 0;
-          font-size: 12px;
-          text-align: left;
+          @include font(12px);
         }
       }
     }
+
     .viewProductBox {
-      justify-content: center;
       width: 760px;
-      margin: 0 auto;
-      padding: 25px;
-      border: 1px solid #cccccc;
-      text-align: center;
+      @include space(25px, 0 auto);
+      @include borderBox($muziLightGray);
       cursor: pointer;
+
       .viewProductBtn {
-        display: flex;
-        justify-content: center;
+        @include flexCenter;
         margin: 0 auto;
         font-size: 12px;
-        align-items: center;
       }
     }
   }

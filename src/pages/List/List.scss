@@ -1,0 +1,114 @@
+@import '../../styles/variables.scss';
+
+.List {
+  width: 1060px;
+  margin: auto;
+  height: 3000px;
+  .container {
+    width: 760px;
+    h4 {
+      margin: 5px 0 25px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid $muziLightGray;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    strong {
+      margin-bottom: 10px;
+      color: $muziRed;
+    }
+    .selectBox {
+      display: flex;
+      border: 1px solid rgb(214, 214, 214);
+      margin-top: 35px;
+      background-color: #ebebeb;
+      .selectScroll {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        cursor: pointer;
+        span {
+          width: 66px;
+          height: 20px;
+          margin-right: 5px;
+          font-size: 11px;
+          border: 1px solid #cccccc;
+          background: #fff
+            url('../../../public/images/listpage/bg_select_li.gif') 100% 0
+            no-repeat;
+        }
+      }
+      .selectText {
+        display: flex;
+        padding: 8px;
+        margin-top: 8px;
+        background-color: #ebebeb;
+        font-size: 12px;
+        border-left: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+        cursor: pointer;
+        li {
+          margin-right: 20px;
+          &:not(:last-child) {
+            padding-right: 11px;
+            border-right: 1px solid #cccccc;
+          }
+        }
+      }
+      .selectBtnGroup {
+        display: flex;
+        padding: 15px;
+        cursor: pointer;
+        .imageBtn {
+          width: 40px;
+          background-image: url(../../../public/images/listpage/btn_typeImg_dim.gif);
+          background-repeat: no-repeat;
+        }
+        .imageListBtn {
+          width: 40px;
+          background-image: url(../../../public/images/listpage/btn_typeList_off.gif);
+          background-repeat: no-repeat;
+        }
+        .more {
+          width: 56px;
+          height: 20px;
+          font-size: 12px;
+          border: 1px solid #cccccc;
+          background: #fff
+            url('../../../public/images/listpage/bg_select_li.gif') 100% 0
+            no-repeat;
+        }
+      }
+    }
+    .ItemList {
+      display: flex;
+      flex-wrap: wrap;
+      .itemContainer {
+        .containerWrap {
+          width: 130px;
+          padding-top: 40px;
+          .listImg {
+            width: 100%;
+            .listIcons {
+              display: flex;
+              width: 13px;
+              img {
+                margin: 4px 7px 0 0;
+              }
+            }
+          }
+          .listTextBox {
+            padding-top: 20px;
+            .listText {
+              font-size: 12px;
+            }
+            .listPrice {
+              padding: 30px 0 0 70px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
