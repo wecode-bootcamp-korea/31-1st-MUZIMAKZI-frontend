@@ -1,12 +1,23 @@
-.sliderArea {
-  position: relative;
-  .slider {
-    .sliderList {
-      .sliderTrack {
-        display: flex;
-        img {
-          width: 870px;
-          height: 580px;
+.landing {
+  display: flex;
+
+  width: 100%;
+  .main {
+    width: 1060px;
+    margin: auto;
+    .sliderArea {
+      position: relative;
+      width: 760px;
+      .slider {
+        .sliderList {
+          .sliderTrack {
+            display: flex;
+
+            img {
+              // width: 760px;
+              // height: 580px;
+            }
+          }
         }
       }
     }
