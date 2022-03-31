@@ -2,7 +2,7 @@ import React from 'react';
 import './Cart.scss';
 const Cart = () => {
   return (
-    <div className="Cart">
+    <div className="cart">
       <div className="container">
         <div className="orderStep">
           <img src="images/cartpage/step1.gif" alt="step1" />
