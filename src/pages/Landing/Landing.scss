@@ -1,13 +1,14 @@
-.landingImg {
-  display: flex;
-  width: 100%;
-  overflow-x: scroll;
-
-  img {
-    width: 1500px;
-    height: 600px;
-    ::-webkit-scrollbar {
-      display: none;
+.sliderArea {
+  position: relative;
+  .slider {
+    .sliderList {
+      .sliderTrack {
+        display: flex;
+        img {
+          width: 870px;
+          height: 580px;
+        }
+      }
     }
   }
 }
