@@ -5,9 +5,9 @@ import './Labo.scss';
 const Labo = () => {
   return (
     <div className="Labo">
-      <div className="container">
+      <article className="container">
         <div className="laboImg">
-          <img src="/images/listpage/무지막지1.jpg" alt="MUZI MAKZI" />
+          <img src="/images/listpage/MUZI1.jpg" alt="MUZI MAKZI" />
         </div>
         <div className="labo">
           <img
@@ -36,7 +36,7 @@ const Labo = () => {
             MUZI MAKZI 상품 보러가기
           </Link>
         </div>
-      </div>
+      </article>
     </div>
   );
 };
