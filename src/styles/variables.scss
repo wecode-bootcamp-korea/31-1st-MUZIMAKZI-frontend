@@ -11,6 +11,26 @@
   align-items: center;
 }
 
+@mixin defaultWidth {
+  width: 1060px;
+  margin: auto;
+}
+
+@mixin space($padding, $margin) {
+  padding: 25px;
+  margin: 0 auto;
+}
+
+@mixin font($fontSize) {
+  font-size: 14px;
+  text-align: left;
+}
+
+@mixin borderBox($color) {
+  border: 1px solid $color;
+  text-align: center;
+}
+
 $muziRed: #7f0019;
 
 $muziLightGray: #cccccc;
