@@ -30,6 +30,8 @@ const Aside = () => {
   );
 };
 
+export default Aside;
+
 const CATEGOTY_LIST = [
   {
     id: 0,
@@ -59,4 +61,3 @@ const CATEGOTY_LIST = [
     types: [{ id: 0, name: '유니섹스 MAKZI' }],
   },
 ];
-export default Aside;
