@@ -1,21 +1,17 @@
 @import '../../styles/variables.scss';
-.Nav {
+
+.nav {
   @include flexCenter;
   justify-items: center;
-  width: 100%;
 
   .navTop {
+    @include flexBetween;
     width: 1060px;
-    display: flex;
-    justify-content: space-between;
     margin: auto;
-    align-items: center;
     padding: 20px 0;
 
     .Logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexCenter;
 
       .muziLogo {
         font-size: 50px;
@@ -29,16 +25,19 @@
         margin-left: 5px;
       }
     }
+
     .navSearch {
       display: flex;
       position: relative;
       border: 2px solid darkgray;
       border-radius: 5px;
       padding: 7px 20px;
+
       input {
         width: 530px;
         border: none;
       }
+
       img {
         position: absolute;
         width: 20px;
@@ -49,19 +48,20 @@
 
     .linkItem {
       .btnLogin {
-        background: url('../../../public/images/nav/login.png') no-repeat center;
+        background: url('/assets/login.png') no-repeat center;
         background-size: 23px;
       }
 
       .btnMypage {
-        background: url('../../../public/images/nav/user.png') no-repeat center;
+        background: url('/assets/user.png') no-repeat center;
         background-size: 25px;
       }
+
       .btnCart {
-        background: url('../../../public/images/nav/shopping-bag.png') no-repeat
-          center;
+        background: url('/assets/shopping-bag.png') no-repeat center;
         background-size: 24px;
       }
+
       button {
         padding: 20px;
       }
@@ -81,10 +81,12 @@
     padding-top: 20px;
     width: 100vw;
     font-weight: bold;
+
     li {
       position: relative;
       margin: 0 20px;
       height: 45px;
+
       &:hover {
         border-bottom: 2px solid black;
       }
