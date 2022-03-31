@@ -4,7 +4,6 @@ import Cart from './pages/Cart/Cart';
 import Detail from './pages/Detail/Detail';
 import List from './pages/List/List';
 import LoginSignup from './pages/LoginSignup/LoginSignup';
-import Signup from './pages/LoginSignup/Signup/Signup';
 import Mens from './pages/Mens/Mens';
 import Womens from './pages/Womens/Womens';
 import Landing from './pages/Landing/Landing';
@@ -18,7 +17,6 @@ const Router = () => {
         <Route path="/detail" element={<Detail />} />
         <Route path="/list" element={<List />} />
         <Route path="/loginsingup" element={<LoginSignup />} />
-        <Route path="/signup" element={<Signup />} />
         <Route path="/mens" element={<Mens />} />
         <Route path="/womens" element={<Womens />} />
         <Route path="/labo" element={<Labo />} />
