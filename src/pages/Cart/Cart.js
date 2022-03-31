@@ -62,17 +62,21 @@ const Cart = () => {
             </div>
             <div className="devider" />
             <div className="cartTotal">
-              <div className="CartTotalPrice">
+              <div className="cartTotalPrice">
                 <span>총 결제 예정 금액 : </span>
-                <span>원</span>
+                <span>
+                  <span className="totalPriceText">0</span>원
+                </span>
               </div>
             </div>
-            <div>
-              <span></span>
-              <span></span>
-            </div>
           </div>
-          <div className="cartResult"></div>
+          <div className="cartResultBtn">
+            <div>
+              <span>선택한 상품</span>
+              <button className="deleteBtn">X 삭제하기</button>
+            </div>
+            <button className="goToShopping">계속 쇼핑하기</button>
+          </div>
         </div>
       </div>
     </div>
