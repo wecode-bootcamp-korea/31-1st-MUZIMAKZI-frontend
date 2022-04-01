@@ -4,7 +4,7 @@ import './Labo.scss';
 
 const Labo = () => {
   return (
-    <div className="Labo">
+    <div className="labo">
       <article className="container">
         <div className="laboImg">
           <img src="/images/listpage/MUZI1.jpg" alt="MUZI MAKZI" />
