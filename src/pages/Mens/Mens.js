@@ -16,8 +16,8 @@ const Mens = () => {
     <>
       <div className="Mens">
         <div className="main">
-          <h5 className="title-h5">남성복</h5>
-          <div className="categoryImg_type_a">
+          <h5 className="titleH5">남성복</h5>
+          <div className="categoryImgTypeA">
             <img
               src="http://image.mujikorea.net/display/corner/202/220323_man_category_img.jpg"
               alt="남성"

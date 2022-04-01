@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '/Users/apple/Desktop/muzimakzi/31-1st-MUZIMAKZI-frontend/src/pages/Detail/DetailComponent/DetailSmallImage.scss';
+import '../DetailComponent/DetailSmallImage.scss';
 
 const DetailSmallImage = ({ id, thumbnail }) => {
   return (
-    <div className="detail-small-list">
+    <div className="detailSmallList">
       <img src={thumbnail}></img>
     </div>
   );

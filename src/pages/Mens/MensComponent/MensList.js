@@ -2,7 +2,7 @@ import React from 'react';
 
 const MensList = ({ id, name, thumbnail }) => {
   return (
-    <div className="small-list">
+    <div className="smallList">
       <p>{name}</p> <img src={thumbnail}></img>
     </div>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
-
-const TextInfo = ({ name, price }) => {
+import '../DetailComponent/TextInfo.scss';
+const TextInfo = ({ price, 배송비 }) => {
   return (
     <div>
-      <h1>{name}</h1>
+      <p className="price">{price}</p>
+      <p>{배송비}</p>
     </div>
   );
 };
