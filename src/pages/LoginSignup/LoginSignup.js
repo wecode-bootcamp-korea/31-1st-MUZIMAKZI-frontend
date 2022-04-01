@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Form from './components/Form';
 import './LoginSignup.scss';
 
-const LoginSignup = () => {
+const LoginSignup = ({ handleModal }) => {
   const [isActice, setIsActice] = useState(false);
   const [menuTab, setMenuTab] = useState('로그인');
-
+  console.log(handleModal);
   const [signInInput, setSignInInput] = useState({
     email: '',
     password: '',
@@ -24,7 +24,10 @@ const LoginSignup = () => {
 
   const goToMain = token => {
     navigate('/');
-    console.log(token);
+    if (token) {
+      localStorage.setItem('TOKEN', token);
+    }
+    handleModal();
   };
 
   // const checkSignInInput = () => {
@@ -51,7 +54,6 @@ const LoginSignup = () => {
       .then(result =>
         result.token ? goToMain(result.token) : alert(result.message)
       );
-    console.log('로그인 통신');
   };
 
   const signUpCommunication = () => {
@@ -82,9 +84,9 @@ const LoginSignup = () => {
   const handleLoginTabButton = () => {
     setMenuTab('로그인');
     setSignUpInput({
-      first_name: '',
-      last_name: '',
-      phone: '',
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
       email: '',
       password: '',
     });
@@ -99,50 +101,55 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className="LoginSignup">
-      <div className="SignHeader">
-        <h1>{menuTab}</h1>
-        <span className="SignHeaderLogo">
-          <span>MUZI</span>
-          <img src="images/loginsignup/無知莫知.png" alt="무지막지로고" />
-        </span>
+    <div className="loginSignup">
+      <div className="modalBg" onClick={handleModal} />
+      <div className="container">
+        <div className="signHeader">
+          <h1>{menuTab}</h1>
+          <span className="signHeaderLogo">
+            <span>MUZI</span>
+            <img src="images/loginsignup/無知莫知.png" alt="무지막지로고" />
+          </span>
+        </div>
+        <ul className={menuTab === '로그인' ? 'loginTap' : 'signupTap'}>
+          <li>
+            <button className="login" onClick={handleLoginTabButton}>
+              로그인
+            </button>
+          </li>
+          <li>
+            <button className="signin" onClick={handleSingupTabButton}>
+              회원가입
+            </button>
+          </li>
+        </ul>
+        {menuTab === '로그인' ? (
+          <Form
+            type="signIn"
+            title="로그인"
+            inputData={SIGNIN_DATA}
+            signInput={signInInput}
+            setSignInInput={setSignInInput}
+            handleInput={handleSignInInput}
+            signCommunication={signInCommunication}
+          />
+        ) : (
+          <Form
+            type="signUp"
+            title="회원가입"
+            inputData={SIGNUP_DATA}
+            signInput={signUpInput}
+            setSignInInput={setSignUpInput}
+            handleInput={handleSignUpInput}
+            signCommunication={signUpCommunication}
+          />
+        )}
       </div>
-      <ul className={menuTab === '로그인' ? 'loginTap' : 'signupTap'}>
-        <li>
-          <button className="login" onClick={handleLoginTabButton}>
-            로그인
-          </button>
-        </li>
-        <li>
-          <button className="signin" onClick={handleSingupTabButton}>
-            회원가입
-          </button>
-        </li>
-      </ul>
-      {menuTab === '로그인' ? (
-        <Form
-          type="signIn"
-          title="로그인"
-          inputData={SIGNIN_DATA}
-          signInput={signInInput}
-          setSignInInput={setSignInInput}
-          handleInput={handleSignInInput}
-          signCommunication={signInCommunication}
-        />
-      ) : (
-        <Form
-          type="signUp"
-          title="회원가입"
-          inputData={SIGNUP_DATA}
-          signInput={signUpInput}
-          setSignInInput={setSignUpInput}
-          handleInput={handleSignUpInput}
-          signCommunication={signUpCommunication}
-        />
-      )}
     </div>
   );
 };
+
+export default LoginSignup;
 
 const SIGNUP_DATA = [
   {
@@ -177,5 +184,3 @@ const SIGNIN_DATA = [
     text: '비밀번호',
   },
 ];
-
-export default LoginSignup;

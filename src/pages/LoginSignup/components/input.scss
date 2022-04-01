@@ -1,15 +1,30 @@
 @import '../../../styles/variables.scss';
+
 .input {
   width: 100%;
-  input {
-    width: 100%;
-    height: 33px;
-    padding: 8px;
-    margin: 4px 0;
-    border: 1px solid $muziLightGray;
-    &::placeholder {
-      color: $muziDarkGray;
-      font-weight: 600;
+
+  .inputWrapper {
+    position: relative;
+
+    .signInput {
+      width: 100%;
+      height: 33px;
+      padding: 8px;
+      margin: 4px 0;
+      border: 1px solid $muziLightGray;
+
+      &::placeholder {
+        color: $muziDarkGray;
+        font-weight: 600;
+      }
+    }
+
+    .validCheck {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: green;
+      opacity: 0.2;
     }
   }
 }

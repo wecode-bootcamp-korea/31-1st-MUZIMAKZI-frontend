@@ -1,17 +1,19 @@
 import React from 'react';
 import './input.scss';
 
-const Input = ({ type, text, handleInput, value }) => {
+const Input = ({ name, type, text, value, handleInput }) => {
   return (
     <div className="input">
       <div className="inputWrapper">
         <input
+          className="signInput"
           name={type}
           type={type}
           placeholder={text}
           value={value}
           onChange={handleInput}
         />
+        {/* {name === 'signUp' ? <span className="validCheck">✔️</span> : null} */}
       </div>
     </div>
   );

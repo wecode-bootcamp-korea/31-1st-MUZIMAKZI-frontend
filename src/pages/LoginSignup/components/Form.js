@@ -12,19 +12,6 @@ const Form = ({
   signInput,
   signCommunication,
 }) => {
-  // const [inputVal, setInputVal] = useState([
-  //   {
-  //     email: '',
-  //     password: '',
-  //   },
-  //   {
-  //     name: '',
-  //     phone: '',
-  //     email: '',
-  //     password: '',
-  //   },
-  // ]);
-
   // const [inputVal, setInputVal] = useState({
   //   signIn: {
   //     email: '',
@@ -53,8 +40,9 @@ const Form = ({
             key={idx}
             type={input.type}
             text={input.text}
-            handleInput={handleInput}
             value={signInput[input.type]}
+            signInput={signInput}
+            handleInput={handleInput}
           />
         ))}
         <Button title={title} signCommunication={signCommunication} />
