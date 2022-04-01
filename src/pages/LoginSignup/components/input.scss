@@ -19,11 +19,18 @@
       }
     }
 
-    .validCheck {
+    .valid {
       position: absolute;
       right: 10px;
       top: 10px;
-      color: green;
+      opacity: 0.2;
+    }
+
+    .pass {
+      opacity: 1;
+    }
+
+    .nonPass {
       opacity: 0.2;
     }
   }

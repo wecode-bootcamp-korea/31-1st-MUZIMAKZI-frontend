@@ -13,10 +13,18 @@ const Input = ({ name, type, text, value, handleInput }) => {
           value={value}
           onChange={handleInput}
         />
-        {/* {name === 'signUp' ? <span className="validCheck">✔️</span> : null} */}
+        {name === 'signUp' ? <span className="valid">✔️</span> : null}
       </div>
     </div>
   );
 };
 
 export default Input;
+
+const ValidCheck = () => {
+  <span className="valid pass">✔️</span>;
+};
+
+const InValidCheck = () => {
+  <span className="valid nonPass">✔️</span>;
+};
