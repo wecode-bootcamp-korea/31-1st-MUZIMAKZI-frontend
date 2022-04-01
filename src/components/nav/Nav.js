@@ -7,27 +7,27 @@ const Nav = () => {
     <nav className="nav">
       <div className="navBox">
         <div className="navTop">
-          <a href="/" className="Logo">
+          <Link to="/" className="Logo">
             <span className="muziLogo">MUZI</span>
             <img
               src="images/nav/MUZISIDE.png"
-              alt="SideLogoImg"
+              alt="SideLogo"
               className="SideLogoImg"
             />
-          </a>
+          </Link>
           <div className="navSearch">
             <input className="searchInput" type="text" />
-            <img src="/images/nav/searchIcon.png" alt="searchIconImg" />
+            <img src="/images/nav/searchIcon.png" alt="searchIcon" />
           </div>
           <div className="linkItem">
-            <a href="/sign">
+            <Link to="/sign">
               <button type="button" className="btnLogin" />
-            </a>
+            </Link>
             <Link to="/">
               <button type="button" className="btnMypage" />
             </Link>
             <Link to="/">
-              <button type="button" className="btnCart" src="/" />
+              <button type="button" className="btnCart" />
             </Link>
           </div>
         </div>
