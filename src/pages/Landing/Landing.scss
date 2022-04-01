@@ -1,21 +1,38 @@
-.landing {
-  display: flex;
+@import '../../styles/variables.scss';
 
-  width: 100%;
+.landing {
+  // display: flex;
+
+  // width: 100%;
   .main {
-    width: 1060px;
-    margin: auto;
+    @include defaultWidth;
+    display: flex;
+    margin-top: 50px;
+
     .sliderArea {
       position: relative;
-      width: 760px;
+      // left: 50%;
+      // top: 50%;
+      width: 870px;
+      height: 580px;
+      overflow-x: hidden;
+
       .slider {
         .sliderList {
+          position: relative;
+
           .sliderTrack {
+            position: absolute;
+            left: 50%;
+            top: 50%;
             display: flex;
+            overflow-x: visible;
+            // transition-delay: 2s;
+            transition-duration: 1s;
 
             img {
-              // width: 760px;
-              // height: 580px;
+              width: 870px;
+              height: 580px;
             }
           }
         }

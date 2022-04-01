@@ -4,12 +4,11 @@ import SwiperData from './SwiperData';
 import './Landing.scss';
 import SliderButton from './SliderButton';
 import Aside from '../../components/aside/Aside';
+import Nav from '../../components/nav/Nav';
 
 const Landing = () => {
   const [swiperList, setSwiperList] = useState([]);
   // 이미지 리스트
-
-  // const [swiper, setSwiper] = useState(swiperList[0]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -19,48 +18,38 @@ const Landing = () => {
       .then(data => setSwiperList(data));
   }, []);
 
-  const handleSwipe = direction => {
-    setCurrentIndex(prevIndex => prevIndex + direction);
-  };
+  function handleSlide(currentIndex) {
+    if (currentIndex === swiperList.length) {
+      currentIndex = 0;
+    } else if (currentIndex < 0) {
+      currentIndex = 4;
+    }
+    setCurrentIndex(currentIndex);
+  }
 
-  // function useInterval(currentIndex, delay) {
-  //   const savedCallback = useRef();
-  //   useEffect(() => {
-  //     savedCallback.current = currentIndex;
-  //   }, [currentIndex]);
+  function handleSwipe(direction) {
+    handleSlide(currentIndex + direction);
+  }
 
-  //   useEffect(() => {
-  //     function tick() {
-  //       savedCallback.current();
-  //     }
-  //     if (delay !== null) {
-  //       let id = setInterval(tick, delay);
-  //       return () => clearInterval(id);
-  //     }
-  //   }, [delay]);
-  // }
-
-  // const swipers = () => {
-  //   useInterval(() => {
-  //     setCurrentIndex(currentIndex => currentIndex + 1);
-  //   }, 2000);
-  // };
+  useEffect(() => {
+    setTimeout(handleSwipe(3), 3000);
+  }, []);
 
   return (
     <div className="landing">
+      <Nav />
       <div className="main">
         <Aside />
-
         <div className="sliderArea">
           <div className="slider">
-            <SliderButton direction="prev" onClick={() => handleSwipe(1)} />
-            <SliderButton direction="next" onClick={() => handleSwipe(-1)} />
+            {/* <SliderButton direction="prev" onClick={() => handleSwipe(1)} />
+            <SliderButton direction="next" onClick={() => handleSwipe(-1)} /> */}
             <div className="sliderList">
               <div
                 className="sliderTrack"
                 style={{
                   transform: `translateX(${
-                    (-100 / swiperList.length) * (1 + currentIndex)
+                    (-100 / swiperList.length) * (0.5 + currentIndex)
                   }%)`,
                 }}
               >
