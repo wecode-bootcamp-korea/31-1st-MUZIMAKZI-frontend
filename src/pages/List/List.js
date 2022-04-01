@@ -5,10 +5,24 @@ import './List.scss';
 const List = () => {
   const [ItemInfo, setItemInfo] = useState([]);
 
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/data/MockData.json')
+  //     .then(res => res.json())
+  //     .then(data => setItemInfo(data));
+  // }, []);
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/MockData.json')
+    fetch('http://10.58.7.79:8000/products/categories/list', {
+      method: 'POST',
+      body: JSON.stringify({
+        type_id: 1,
+      }),
+    })
       .then(res => res.json())
-      .then(data => setItemInfo(data));
+      .then(data => {
+        setItemInfo(data);
+      });
+    console.log(ItemInfo);
   }, []);
 
   return (
@@ -20,8 +34,9 @@ const List = () => {
         </p>
         <div className="selectBox">
           <div className="selectScroll">
-            <span>컬러</span>
-            <span>사이즈</span>
+            <span class="selectList">컬러</span>
+            <span className="selectList">사이즈</span>
+            <div className="selectList"></div>
           </div>
           <ul className="selectText">
             <li>

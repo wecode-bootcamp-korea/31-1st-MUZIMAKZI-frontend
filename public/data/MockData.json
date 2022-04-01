@@ -3,72 +3,72 @@
     "id": 1,
     "name": "울 혼방 더블 페이스 하이넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image1.jpg"
+    "thumbnail_image_url": "../images/listpage/image1.jpg"
   },
   {
     "id": 2,
     "name": "울 혼방 더블 페이스 재킷",
     "price": "29,900",
-    "thumbnail": "../images/listpage/image2.jpg"
+    "thumbnail_image_url": "../images/listpage/image2.jpg"
   },
   {
     "id": 3,
     "name": "울 혼방 더블 페이스 하이넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image3.jpg"
+    "thumbnail_image_url": "../images/listpage/image3.jpg"
   },
   {
     "id": 4,
     "name": "튼튼한 니트 원단 집업 가디건",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image4.jpg"
+    "thumbnail_image_url": "../images/listpage/image4.jpg"
   },
   {
     "id": 5,
     "name": "메리노 울 미들 게이지 베스트",
     "price": "29,900",
-    "thumbnail": "../images/listpage/image5.jpg"
+    "thumbnail_image_url": "../images/listpage/image5.jpg"
   },
   {
     "id": 6,
     "name": "메리노 울 미들 게이지 크루넥스웨터",
     "price": "39,900",
-    "thumbnail": "../images/listpage/image6.jpg"
+    "thumbnail_image_url": "../images/listpage/image6.jpg"
   },
   {
     "id": 7,
     "name": "메리노 울 미들 게이지 크루넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image7.jpg"
+    "thumbnail_image_url": "../images/listpage/image7.jpg"
   },
   {
     "id": 8,
     "name": "메리노 울 워셔블 하이넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image8.jpg"
+    "thumbnail_image_url": "../images/listpage/image8.jpg"
   },
   {
     "id": 9,
     "name": "메리노 울 워셔블 V넥 가디건",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image9.jpg"
+    "thumbnail_image_url": "../images/listpage/image9.jpg"
   },
   {
     "id": 10,
     "name": "메리노 울 미들게이지 크루넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image10.jpg"
+    "thumbnail_image_url": "../images/listpage/image10.jpg"
   },
   {
     "id": 11,
     "name": "메리노 울 미들게이지 크루넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image10.jpg"
+    "thumbnail_image_url": "../images/listpage/image10.jpg"
   },
   {
     "id": 12,
     "name": "메리노 울 미들게이지 크루넥 스웨터",
     "price": "19,900",
-    "thumbnail": "../images/listpage/image10.jpg"
+    "thumbnail_image_url": "../images/listpage/image10.jpg"
   }
 ]
