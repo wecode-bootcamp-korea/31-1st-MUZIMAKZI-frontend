@@ -5,12 +5,6 @@ import './List.scss';
 const List = () => {
   const [ItemInfo, setItemInfo] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data/MockData.json')
-  //     .then(res => res.json())
-  //     .then(data => setItemInfo(data));
-  // }, []);
-
   useEffect(() => {
     fetch('http://10.58.7.79:8000/products/categories/list', {
       method: 'POST',
@@ -20,9 +14,8 @@ const List = () => {
     })
       .then(res => res.json())
       .then(data => {
-        setItemInfo(data);
+        setItemInfo(data.message);
       });
-    console.log(ItemInfo);
   }, []);
 
   return (
