@@ -11,12 +11,13 @@ const Landing = () => {
   // 이미지 리스트
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  // 현재 이미지
   useEffect(() => {
     fetch('data/swiperItems.json')
       .then(res => res.json())
       .then(data => setSwiperList(data));
   }, []);
+  // mock data 불러옴
 
   function handleSlide(currentIndex) {
     if (currentIndex === swiperList.length) {
@@ -32,8 +33,16 @@ const Landing = () => {
   }
 
   useEffect(() => {
-    setTimeout(handleSwipe(3), 3000);
+    setTimeout(handleSwipe(4), 3000);
   }, []);
+
+  // function autoIndex() {
+  //   autoIndex(currentIndex+);
+  // }
+
+  // useEffect(() => {
+  //   setTimeout(autoIndex(4), 3000, 1);
+  // }, []);
 
   return (
     <div className="landing">
