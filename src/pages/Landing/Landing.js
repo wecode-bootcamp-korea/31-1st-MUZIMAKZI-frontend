@@ -12,11 +12,14 @@ const Landing = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   // 현재 이미지
+
+  // const [count, setCount] = useState(0);
+
   useEffect(() => {
     fetch('data/swiperItems.json')
       .then(res => res.json())
       .then(data => setSwiperList(data));
-  }, []);
+  }, [currentIndex]);
   // mock data 불러옴
 
   function handleSlide(currentIndex) {
@@ -31,18 +34,39 @@ const Landing = () => {
   function handleSwipe(direction) {
     handleSlide(currentIndex + direction);
   }
+  // 상단은 버튼 코드 !
+
+  // const AutoCounter = () => {
+  //   if (currentIndex === swiperList.length) {
+  //     currentIndex = 0;
+  //   } else if (currentIndex < 0) {
+  //     currentIndex = 4;
+  //   }
+  //   setCurrentIndex(currentIndex);
+  // };
 
   useEffect(() => {
-    setTimeout(handleSwipe(4), 3000);
-  }, []);
-
-  // function autoIndex() {
-  //   autoIndex(currentIndex+);
-  // }
+    const timeoutId = setTimeout(
+      () =>
+        setCurrentIndex(currentValue => {
+          if (currentValue < swiperList.length - 1) {
+            return setCurrentIndex(currentIndex + 1);
+          } else {
+            return setCurrentIndex(0);
+          }
+        }),
+      2500
+    );
+    return () => clearTimeout(timeoutId);
+  });
 
   // useEffect(() => {
-  //   setTimeout(autoIndex(4), 3000, 1);
-  // }, []);
+  //   const timeoutId = setTimeout(
+  //     () => setCurrentIndex(currentIndex => currentIndex + 1),
+  //     2500
+  //   );
+  //   return () => clearTimeout(timeoutId);
+  // }, [currentIndex]);
 
   return (
     <div className="landing">
@@ -51,15 +75,13 @@ const Landing = () => {
         <Aside />
         <div className="sliderArea">
           <div className="slider">
-            {/* <SliderButton direction="prev" onClick={() => handleSwipe(1)} />
-            <SliderButton direction="next" onClick={() => handleSwipe(-1)} /> */}
+            <SliderButton direction="prev" onClick={() => handleSwipe(-1)} />
+            <SliderButton direction="next" onClick={() => handleSwipe(1)} />
             <div className="sliderList">
               <div
                 className="sliderTrack"
                 style={{
-                  transform: `translateX(${
-                    (-100 / swiperList.length) * (0.5 + currentIndex)
-                  }%)`,
+                  transform: `translateX(${-870 * (0.5 + currentIndex)}px)`,
                 }}
               >
                 {swiperList.map(imgList => {
