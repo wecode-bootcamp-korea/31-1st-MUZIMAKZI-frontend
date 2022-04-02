@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진1",
+    "content_value": "리액트 우마이이이잉"
+  },
+  {
+    "id": 2,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진2",
+    "content_value": "리액트 우마이이이잉"
+  },
+  {
+    "id": 3,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진3",
+    "content_value": "리액트 우마이이이잉"
+  },
+  {
+    "id": 4,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진4",
+    "content_value": "리액트 우마이이이잉"
+  },
+  {
+    "id": 5,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진5",
+    "content_value": "리액트 우마이이이잉"
+  },
+  {
+    "id": 6,
+    "img_url": "../images/landingpage/바다2.jpg",
+    "title": "사진6",
+    "content_value": "리액트 우마이이이잉"
+  }
+]

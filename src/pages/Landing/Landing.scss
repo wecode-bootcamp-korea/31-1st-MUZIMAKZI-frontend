@@ -9,33 +9,61 @@
     display: flex;
     margin-top: 25px;
 
-    .sliderArea {
-      position: relative;
-      // left: 50%;
-      // top: 50%;
+    .contents {
+      display: flex;
+      flex-direction: column;
       width: 870px;
-      height: 580px;
-      overflow-x: hidden;
 
-      .slider {
-        .sliderList {
-          position: relative;
+      .sliderArea {
+        position: relative;
+        width: 870px;
+        height: 580px;
+        overflow-x: hidden;
 
-          .sliderTrack {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            display: flex;
-            overflow-x: visible;
-            transform: translateX(0);
-            // transition-delay: 2s;
-            transition-duration: 1.5s;
+        .slider {
+          .sliderList {
+            position: relative;
 
-            img {
-              width: 870px;
-              height: 580px;
+            .sliderTrack {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              display: flex;
+              overflow-x: visible;
+              transform: translateX(0);
+              // transition-delay: 2s;
+              transition-duration: 1.5s;
+
+              img {
+                width: 870px;
+                height: 580px;
+              }
             }
           }
+        }
+      }
+      .firstContents {
+        width: 870px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .firstTop {
+          display: flex;
+          justify-content: space-between;
+          font-size: 30px;
+          font-weight: bold;
+
+          .firstTopBtn {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            background: url('../../../public/images/landingpage/rightnext.png')
+              no-repeat center;
+            background-size: 24px;
+          }
+        }
+        .firstBottom {
+          display: flex;
+          flex-wrap: wrap;
         }
       }
     }

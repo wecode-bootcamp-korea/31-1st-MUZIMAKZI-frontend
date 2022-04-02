@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.firstContent {
+  // height: 250px;
+  margin: 10px;
+  border: 1px solid lightgray;
+
+  img {
+    width: 268px;
+    height: 180px;
+  }
+  div {
+    padding: 25px 30px;
+    height: 70px;
+  }
+}
