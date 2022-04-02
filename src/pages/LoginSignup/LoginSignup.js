@@ -4,7 +4,6 @@ import Form from './components/Form';
 import './LoginSignup.scss';
 
 const LoginSignup = ({ handleLoginModal }) => {
-  const [isActice, setIsActice] = useState(false);
   const [menuTab, setMenuTab] = useState('로그인');
 
   const [signInInput, setSignInInput] = useState({
@@ -29,18 +28,6 @@ const LoginSignup = ({ handleLoginModal }) => {
     }
     handleLoginModal();
   };
-
-  // const checkSignInInput = () => {
-  //   const check =
-  //     signInInput.email.includes('@' && '.com') &&
-  //     signInInput.password.length >= 5;
-  //   setIsActice(!check);
-  // };
-  // const checkSignUpInput = () => {
-  //   const check =
-  //     signUpInput.email.indexOf('@') === -1 || signUpInput.password.length < 5;
-  //   setIsActice(!check);
-  // };
 
   const signInCommunication = () => {
     fetch('http://10.58.4.74:8000/users/signin', {
@@ -125,7 +112,7 @@ const LoginSignup = ({ handleLoginModal }) => {
         </ul>
         {menuTab === '로그인' ? (
           <Form
-            type="signIn"
+            formType="signIn"
             title="로그인"
             inputData={SIGNIN_DATA}
             signInput={signInInput}
@@ -135,7 +122,7 @@ const LoginSignup = ({ handleLoginModal }) => {
           />
         ) : (
           <Form
-            type="signUp"
+            formType="signUp"
             title="회원가입"
             inputData={SIGNUP_DATA}
             signInput={signUpInput}

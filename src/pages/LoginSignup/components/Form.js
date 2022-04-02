@@ -5,46 +5,40 @@ import Button from './Button';
 import './Form.scss';
 
 const Form = ({
-  type,
+  formType,
   title,
   inputData,
   handleInput,
   signInput,
   signCommunication,
 }) => {
-  // const [inputVal, setInputVal] = useState({
-  //   signIn: {
-  //     email: '',
-  //     password: '',
-  //   },
-  //   signUp: {
-  //     name: '',
-  //     phone: '',
-  //     email: '',
-  //     password: '',
-  //   },
-  // });
-
-  // const handleInput = e => {
-  //   const { name, value } = e.target;
-  //   console.log(inputVal);
-  //   setInputVal(prevVal => ({ ...prevVal, ...prevVal[type], [name]: value }));
-  // };
-  console.log(signInput);
   return (
     <FormLayout>
       <div className="form">
-        {inputData.map((input, idx) => (
-          <Input
-            name={type}
-            key={idx}
-            type={input.type}
-            text={input.text}
-            value={signInput[input.type]}
-            signInput={signInput}
-            handleInput={handleInput}
-          />
-        ))}
+        {formType === 'signIn'
+          ? inputData.map((input, idx) => (
+              <Input
+                name={formType}
+                key={idx}
+                type={input.type}
+                text={input.text}
+                value={signInput[input.type]}
+                signInput={signInput}
+                handleInput={handleInput}
+              />
+            ))
+          : inputData.map((input, idx) => (
+              <Input
+                name={formType}
+                key={idx}
+                type={input.type}
+                text={input.text}
+                value={signInput[input.type]}
+                signInput={signInput}
+                handleInput={handleInput}
+                handleSignUpValid={signUpValidator[input.type]}
+              />
+            ))}
         <Button title={title} signCommunication={signCommunication} />
       </div>
     </FormLayout>
@@ -52,3 +46,14 @@ const Form = ({
 };
 
 export default Form;
+
+const signUpValidator = {
+  firstName: value => value.length >= 1,
+  lastName: value => value.length >= 1,
+  phoneNumber: value =>
+    value.length === 11 && parseInt(value) && value.includes('010'),
+  email: value => value.includes('@' && '.com'),
+  password: value =>
+    value.includes('!' || '@' || '#' || '$' || '%' || '&' || '?') &&
+    value.length >= 8,
+};

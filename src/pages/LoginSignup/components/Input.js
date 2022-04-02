@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './input.scss';
 
-const Input = ({ name, type, text, value, handleInput }) => {
+const Input = ({ name, type, text, value, handleInput, handleSignUpValid }) => {
+  const [isValid, setIsValid] = useState(false);
+
+  const valid = value => {
+    const validTest = name === 'signUp' && handleSignUpValid(value);
+    setIsValid(validTest);
+  };
+
+  useEffect(() => {
+    valid(value);
+  });
+
   return (
     <div className="input">
       <div className="inputWrapper">
@@ -13,7 +24,7 @@ const Input = ({ name, type, text, value, handleInput }) => {
           value={value}
           onChange={handleInput}
         />
-        {name === 'signUp' ? <span className="valid">✔️</span> : null}
+        {name === 'signIn' ? null : isValid ? <ValidCheck /> : <InValidCheck />}
       </div>
     </div>
   );
@@ -22,9 +33,9 @@ const Input = ({ name, type, text, value, handleInput }) => {
 export default Input;
 
 const ValidCheck = () => {
-  <span className="valid pass">✔️</span>;
+  return <span className="valid pass">✔️</span>;
 };
 
 const InValidCheck = () => {
-  <span className="valid nonPass">✔️</span>;
+  return <span className="valid nonPass">✔️</span>;
 };
