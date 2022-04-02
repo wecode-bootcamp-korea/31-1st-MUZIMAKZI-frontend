@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LoginSignup from '../../pages/LoginSignup/LoginSignup';
 import './Nav.scss';
 
 const Nav = () => {
+  const [signModal, setSignModal] = useState(false);
+
+  const handleLoginModal = () => {
+    setSignModal(!signModal);
+  };
   return (
     <nav className="nav">
       <div className="navBox">
@@ -20,9 +26,12 @@ const Nav = () => {
             <img src="/images/nav/searchIcon.png" alt="searchIcon" />
           </div>
           <div className="linkItem">
-            <Link to="/sign">
-              <button type="button" className="btnLogin" />
-            </Link>
+            <button
+              type="button"
+              className="btnLogin"
+              onClick={handleLoginModal}
+            />
+
             <Link to="/">
               <button type="button" className="btnMypage" />
             </Link>
@@ -43,6 +52,7 @@ const Nav = () => {
           </ul>
         </div>
       </div>
+      {signModal ? <LoginSignup handleLoginModal={handleLoginModal} /> : null}
     </nav>
   );
 };

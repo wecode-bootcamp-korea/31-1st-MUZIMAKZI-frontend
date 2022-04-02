@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Form from './components/Form';
 import './LoginSignup.scss';
 
-const LoginSignup = ({ handleModal }) => {
+const LoginSignup = ({ handleLoginModal }) => {
   const [isActice, setIsActice] = useState(false);
   const [menuTab, setMenuTab] = useState('로그인');
-  console.log(handleModal);
+
   const [signInInput, setSignInInput] = useState({
     email: '',
     password: '',
@@ -27,7 +27,7 @@ const LoginSignup = ({ handleModal }) => {
     if (token) {
       localStorage.setItem('TOKEN', token);
     }
-    handleModal();
+    handleLoginModal();
   };
 
   // const checkSignInInput = () => {
@@ -102,7 +102,7 @@ const LoginSignup = ({ handleModal }) => {
 
   return (
     <div className="loginSignup">
-      <div className="modalBg" onClick={handleModal} />
+      <div className="modalBg" onClick={handleLoginModal} />
       <div className="container">
         <div className="signHeader">
           <h1>{menuTab}</h1>
