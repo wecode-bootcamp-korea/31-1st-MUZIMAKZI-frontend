@@ -59,11 +59,11 @@ const List = () => {
             <li className="more">50</li>
           </ul>
         </div>
-        <div className="ItemList">
+        <ul className="itemBox">
           {ItemInfo.map(item => (
             <ItemList key={item.id} {...item} />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

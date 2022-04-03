@@ -91,43 +91,9 @@
         }
       }
     }
-
-    .ItemList {
+    .itemBox {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-
-      .itemContainer {
-        .containerWrap {
-          width: 130px;
-          padding-top: 40px;
-
-          .listImg {
-            width: 100%;
-
-            .listIcons {
-              display: flex;
-              width: 13px;
-
-              img {
-                margin: 4px 7px 0 0;
-              }
-            }
-          }
-          .listTextBox {
-            padding-top: 20px;
-
-            .listText {
-              font-size: 12px;
-            }
-
-            .listPrice {
-              padding: 30px 0 0 70px;
-              font-size: 12px;
-            }
-          }
-        }
-      }
     }
   }
 }
