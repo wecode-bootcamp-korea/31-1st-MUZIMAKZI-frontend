@@ -5,17 +5,24 @@ import './List.scss';
 const List = () => {
   const [ItemInfo, setItemInfo] = useState([]);
 
+  //데이터 정보
+  // useEffect(() => {
+  //   fetch('http://10.58.7.79:8000/products/categories/list', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       type_id: 1,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setItemInfo(data.message);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://10.58.7.79:8000/products/categories/list', {
-      method: 'POST',
-      body: JSON.stringify({
-        type_id: 1,
-      }),
-    })
+    fetch('http://localhost:3000/data/MockData.json')
       .then(res => res.json())
-      .then(data => {
-        setItemInfo(data.message);
-      });
+      .then(data => setItemInfo(data));
   }, []);
 
   return (
