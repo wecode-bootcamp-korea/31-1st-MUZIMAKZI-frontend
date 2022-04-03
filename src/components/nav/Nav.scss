@@ -51,6 +51,12 @@
       background-size: 23px;
     }
 
+    .btnLogout {
+      background: url('/assets/login.png') no-repeat center;
+      background-size: 23px;
+      transform: scaleX(-1);
+    }
+
     .btnMypage {
       background: url('/assets/user.png') no-repeat center;
       background-size: 25px;

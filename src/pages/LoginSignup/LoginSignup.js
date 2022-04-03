@@ -26,11 +26,12 @@ const LoginSignup = ({ handleLoginModal }) => {
     if (token) {
       localStorage.setItem('TOKEN', token);
     }
+    alert('로그인 되었습니다');
     handleLoginModal();
   };
 
   const signInCommunication = () => {
-    fetch('http://10.58.4.74:8000/users/signin', {
+    fetch('http://10.58.2.45:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: signInInput.email,
@@ -38,13 +39,15 @@ const LoginSignup = ({ handleLoginModal }) => {
       }),
     })
       .then(response => response.json())
-      .then(result =>
-        result.token ? goToMain(result.token) : alert(result.message)
-      );
+      .then(result => {
+        result.access_token
+          ? goToMain(result.access_token)
+          : alert('로그인 실패');
+      });
   };
 
   const signUpCommunication = () => {
-    fetch('http://10.58.4.74:8000/users/signup', {
+    fetch('http://10.58.2.45:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         first_name: signUpInput.firstName,
@@ -55,7 +58,9 @@ const LoginSignup = ({ handleLoginModal }) => {
       }),
     })
       .then(response => response.json())
-      .then(result => console(result));
+      .then(result => {
+        handleSingUpResult(result);
+      });
   };
 
   const handleSignInInput = e => {
@@ -87,6 +92,14 @@ const LoginSignup = ({ handleLoginModal }) => {
     });
   };
 
+  const handleSingUpResult = result => {
+    if (result.message === 'SUCCESS') {
+      alert('회원가입에 성공하였습니다');
+      setMenuTab('로그인');
+    } else if (result.message === 'ALREADY EXITSTS EMAIL') {
+      alert('이미 가입된 회원입니다.');
+    }
+  };
   return (
     <div className="loginSignup">
       <div className="modalBg" onClick={handleLoginModal} />
