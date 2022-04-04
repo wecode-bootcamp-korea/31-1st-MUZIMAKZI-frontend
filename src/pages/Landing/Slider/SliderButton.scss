@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 
 @mixin btn {
   background-size: 25px;
@@ -16,8 +16,8 @@ button {
   position: absolute;
   left: 0%;
   top: 45%;
-  background: url('../../../public/images/landingpage/leftnext.png') no-repeat
-    center;
+  background: url('../../../../public/images/landingpage/leftnext.png')
+    no-repeat center;
   @include btn;
 }
 
@@ -25,7 +25,7 @@ button {
   position: absolute;
   right: 0;
   top: 45%;
-  background: url('../../../public/images/landingpage/rightnext.png') no-repeat
-    center;
+  background: url('../../../../public/images/landingpage/rightnext.png')
+    no-repeat center;
   @include btn;
 }
