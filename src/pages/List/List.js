@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemListComponents/ItemList';
-import SelectBox from './selectBoxComponents/selectBox';
+import SelectBox from './SelectBoxComponents/SelectBox';
 import './List.scss';
 
 const List = () => {
