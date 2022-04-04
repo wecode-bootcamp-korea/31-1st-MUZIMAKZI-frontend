@@ -21,7 +21,9 @@
 .bold {
   font-weight: 700;
 }
-
+.pageContainer {
+  width: 760px;
+}
 // float 속성 해제
 .clear:after {
   content: '';

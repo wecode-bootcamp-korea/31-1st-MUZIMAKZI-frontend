@@ -1,0 +1,64 @@
+@import '../../../styles/variables.scss';
+.CartItemCell {
+  .prdImg {
+    border-bottom: 1px dotted gray;
+    @include flexCenter;
+    span {
+      text-align: left;
+      margin: 0px 2px 0px;
+    }
+    img {
+      border: 1px solid $muziGray;
+    }
+  }
+  .prdInfo {
+    border-bottom: 1px dotted gray;
+    .prdName {
+      padding: 4px 0px;
+    }
+    .prdOption {
+      color: $muziRed;
+    }
+  }
+  .prdPrice {
+    border: none;
+    border-bottom: 1px dotted gray;
+  }
+  .prdQty {
+    text-align: center;
+    border-bottom: 1px dotted gray;
+    border-right: 1px dotted gray;
+    ul {
+      li {
+        margin: 2px 0;
+      }
+      input {
+        width: 70%;
+      }
+      button {
+        border: 1px solid $muziGray;
+        width: 70%;
+      }
+    }
+  }
+  .prdSum {
+    text-align: center;
+    border-bottom: 1px dotted gray;
+    border-right: 1px dotted gray;
+    p {
+      color: $muziRed;
+    }
+  }
+  .prdOrder {
+    text-align: center;
+    border-bottom: 1px dotted gray;
+    border-right: 1px dotted gray;
+    li {
+      margin: 2px 0;
+    }
+    bottom {
+      width: 70%;
+      border: 1px solid $muziGray;
+    }
+  }
+}
