@@ -1,5 +1,5 @@
 import React from 'react';
-import './List.scss';
+import './ItemList.scss';
 
 function ItemList({ name, price, thumbnail_image_url }) {
   return (
@@ -21,6 +21,14 @@ function ItemList({ name, price, thumbnail_image_url }) {
       <div className="listText">{name}</div>
       <div className="listPrice">
         <b>{price}</b>원
+      </div>
+      <div className="tagTop">
+        <span className="sale">SALE</span>
+        <span className="onlineSize">온라인한정사이즈</span>
+      </div>
+      <div className="tagBottom">
+        <span className="freeShipping">무료배송</span>
+        <span className="soldOut">품절</span>
       </div>
     </li>
   );

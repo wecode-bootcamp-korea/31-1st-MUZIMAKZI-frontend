@@ -29,29 +29,37 @@ const List = () => {
     <div className="List">
       <div className="container">
         <h4>남성니트</h4>
-        <p>
-          총 <strong>100개</strong>의 상품이 있습니다.
-        </p>
+        <div className="nextPage">
+          <p>
+            총 <b>131개</b>의 상품이 있습니다.
+          </p>
+          <ul>
+            <li className="btnPageL">
+              <img src="/images/listpage/btn_first_dim.gif" alt="" />
+            </li>
+            <li className="btnPageL">
+              <img src="/images/listpage/btn_prev_dim.gif" alt="" />
+            </li>
+            <li>
+              <strong>1</strong>
+            </li>
+            <li className="btnPageR">
+              <img src="/images/listpage/btn_next_dim.gif" alt="" />
+            </li>
+            <li className="btnPageR">
+              <img src="/images/listpage/btn_last_dim.gif" alt="" />
+            </li>
+          </ul>
+        </div>
         <div className="selectBox">
-          <div className="selectScroll">
-            <span class="selectList">컬러</span>
-            <span className="selectList">사이즈</span>
-            <div className="selectList"></div>
-          </div>
           <ul className="selectText">
-            <li>
-              <b>인기순</b>
-            </li>
-            <li>
-              <b>신상품순</b>
-            </li>
-            <li>
-              <b>낮은가격순</b>
-            </li>
-            <li>
-              <b>높은가격순</b>
-            </li>
-            <li>추천상품순</li>
+            <li className="selectFir">전체</li>
+            <li className="selectList">온라인 한정 사이즈</li>
+            <li className="selectList">무료배송</li>
+            <li className="selectRed">SALE</li>
+            <li className="selectList">품절</li>
+            <li className="selectList">낮은가격</li>
+            <li className="selectList">높은가격</li>
           </ul>
           <ul className="selectBtnGroup">
             <li className="imageBtn"></li>

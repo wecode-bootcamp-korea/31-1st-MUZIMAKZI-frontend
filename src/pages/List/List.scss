@@ -11,61 +11,79 @@
     h4 {
       margin: 5px 0 25px;
       padding-bottom: 18px;
-      border-bottom: 1px solid $muziLightGray;
+      border-bottom: 1px solid #e6e6e6;
       font-size: 14px;
       font-weight: bold;
     }
-
-    strong {
-      margin-bottom: 10px;
-      color: $muziRed;
+    p {
+      font-weight: 300;
+      font-size: 13px;
+      b {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: $muziRed;
+      }
+    }
+    .nextPage {
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .btnPageL {
+        margin-right: 5px;
+      }
+      strong {
+        border: 1px solid #7f0019;
+        color: #7f0019;
+        padding: 1px 4px 1px;
+        font-size: 11px;
+        display: inline-block;
+      }
+      .btnPageR {
+        margin-left: 5px;
+      }
     }
 
     .selectBox {
       display: flex;
+      padding: 6px 0 5px;
+      margin-top: 26px;
       border: 1px solid rgb(214, 214, 214);
-      margin-top: 35px;
       background-color: #ebebeb;
-
-      .selectScroll {
-        display: flex;
-        align-items: center;
-        padding: 16px;
-        cursor: pointer;
-
-        span {
-          width: 66px;
-          height: 20px;
-          margin-right: 5px;
-          font-size: 11px;
-          border: 1px solid #cccccc;
-          background: #fff
-            url('../../../public/images/listpage/bg_select_li.gif') 100% 0
-            no-repeat;
-        }
-      }
       .selectText {
         display: flex;
         padding: 8px;
-        margin-top: 8px;
-        background-color: #ebebeb;
         font-size: 12px;
-        border-left: 1px solid #cccccc;
-        border-right: 1px solid #cccccc;
         cursor: pointer;
-
-        li {
-          margin-right: 20px;
-          &:not(:last-child) {
-            padding-right: 11px;
-            border-right: 1px solid #cccccc;
-          }
+        .selectFir {
+          float: left;
+          padding: 0 16px;
+          font-weight: bold;
+          border-right: 1px solid #cccccc;
+        }
+        .selectList {
+          float: left;
+          padding: 0 16px;
+          font-weight: bold;
+          color: #999;
+          border-right: 1px solid #cccccc;
+        }
+        .selectRed {
+          float: left;
+          padding: 0 16px;
+          font-weight: bold;
+          color: #999;
+          color: #7f0019;
+          border-right: 1px solid #cccccc;
         }
       }
 
       .selectBtnGroup {
         display: flex;
-        padding: 15px;
+        padding: 7px 0 0 0;
+        margin-left: 37px;
         cursor: pointer;
 
         .imageBtn {
@@ -93,7 +111,9 @@
     }
     .itemBox {
       display: flex;
+      margin-top: 50px;
       flex-wrap: wrap;
+      // width: 130px;
     }
   }
 }
