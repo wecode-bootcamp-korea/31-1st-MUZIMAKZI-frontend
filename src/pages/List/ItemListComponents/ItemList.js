@@ -32,5 +32,4 @@ function ItemList({ name, price, thumbnail_image_url }) {
     </li>
   );
 }
-
 export default ItemList;

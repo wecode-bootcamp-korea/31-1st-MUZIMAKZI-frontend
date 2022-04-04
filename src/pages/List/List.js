@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemListComponents/ItemList';
+import SelectBox from './selectBoxComponents/selectBox';
 import './List.scss';
 
 const List = () => {
@@ -51,22 +52,7 @@ const List = () => {
             </li>
           </ul>
         </nav>
-        <div className="selectBox">
-          <ul className="selectText">
-            <li className="selectFir">전체</li>
-            <li className="selectList">온라인 한정 사이즈</li>
-            <li className="selectList">무료배송</li>
-            <li className="selectRed">SALE</li>
-            <li className="selectList">품절</li>
-            <li className="selectList">낮은가격</li>
-            <li className="selectList">높은가격</li>
-          </ul>
-          <ul className="selectBtnGroup">
-            <li className="imageBtn"></li>
-            <li className="imageListBtn"></li>
-            <li className="more">50</li>
-          </ul>
-        </div>
+        <SelectBox />
         <ul className="itemBox">
           {ItemInfo.map(item => (
             <ItemList key={item.id} {...item} />
@@ -77,34 +63,3 @@ const List = () => {
   );
 };
 export default List;
-
-const SELECTTEXT_DATA = [
-  {
-    id: 1,
-    list: '전체',
-  },
-  {
-    id: 2,
-    list: '온라인 한정 사이즈',
-  },
-  {
-    id: 3,
-    list: '무료배송',
-  },
-  {
-    id: 4,
-    list: 'SALE',
-  },
-  {
-    id: 5,
-    list: '품절',
-  },
-  {
-    id: 6,
-    list: '낮은가격',
-  },
-  {
-    id: 7,
-    list: '높은가격',
-  },
-];

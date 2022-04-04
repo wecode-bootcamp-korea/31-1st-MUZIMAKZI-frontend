@@ -1,0 +1,65 @@
+@import '../../../styles/variables.scss';
+
+.selectBox {
+  display: flex;
+  padding: 6px 0 5px;
+  margin-top: 26px;
+  border: 1px solid rgb(214, 214, 214);
+  background-color: #ebebeb;
+
+  .selectText {
+    display: flex;
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+
+    .selectFir {
+      float: left;
+      padding: 0 16px;
+      border-right: 1px solid #cccccc;
+    }
+
+    .selectList {
+      float: left;
+      padding: 0 16px;
+      border-right: 1px solid #cccccc;
+      color: #999;
+    }
+
+    .selectRed {
+      float: left;
+      padding: 0 16px;
+      border-right: 1px solid #cccccc;
+      color: #7f0019;
+    }
+  }
+
+  .selectBtnGroup {
+    display: flex;
+    padding: 7px 0 0 0;
+    margin-left: 37px;
+    cursor: pointer;
+
+    .imageBtn {
+      width: 40px;
+      background-image: url('../../../../public/images/listpage/btn_typeImg_dim.gif');
+      background-repeat: no-repeat;
+    }
+
+    .imageListBtn {
+      width: 40px;
+      background-image: url('../../../../public/images/listpage/btn_typeList_off.gif');
+      background-repeat: no-repeat;
+    }
+
+    .more {
+      width: 56px;
+      height: 20px;
+      border: 1px solid #cccccc;
+      background: #fff
+        url('../../../../public/images/listpage/bg_select_li.gif') 100% 0
+        no-repeat;
+      font-size: 12px;
+    }
+  }
+}
