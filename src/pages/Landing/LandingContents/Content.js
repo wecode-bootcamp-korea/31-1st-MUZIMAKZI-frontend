@@ -7,8 +7,10 @@ const Content = ({ firstContentsList, setFirstContentsList }) => {
   useEffect(() => {
     fetch('data/contentslist.json')
       .then(res => res.json())
-      .then(data => setFirstContentsList(data));
-  }, []);
+      .then(data => {
+        setFirstContentsList(data);
+      });
+  }, [setFirstContentsList]);
 
   return (
     <div className="firstContents">

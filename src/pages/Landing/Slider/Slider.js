@@ -12,8 +12,10 @@ const Slider = ({
   useEffect(() => {
     fetch('data/swiperItems.json')
       .then(res => res.json())
-      .then(data => setSwiperList(data));
-  }, []);
+      .then(data => {
+        setSwiperList(data);
+      });
+  }, [setSwiperList]);
 
   function handleSlide(currentIndex) {
     if (currentIndex === swiperList.length) {

@@ -9,9 +9,7 @@ import Mens from './pages/Mens/Mens';
 import Womens from './pages/Womens/Womens';
 import Landing from './pages/Landing/Landing';
 import Labo from './pages/Labo/Labo';
-//임시된거라 push할땐 지워야함
-import Aside from './components/aside/Aside';
-import Nav from './components/nav/Nav';
+
 const Router = () => {
   return (
     <BrowserRouter>
