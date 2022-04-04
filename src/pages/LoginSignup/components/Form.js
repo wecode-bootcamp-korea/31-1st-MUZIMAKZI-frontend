@@ -5,7 +5,7 @@ import Button from './Button';
 import './Form.scss';
 
 const Form = ({
-  formType,
+  isLogin,
   title,
   inputData,
   handleInput,
@@ -15,10 +15,10 @@ const Form = ({
   return (
     <FormLayout>
       <div className="form">
-        {formType === 'signIn'
+        {isLogin
           ? inputData.map((input, idx) => (
               <Input
-                name={formType}
+                isLogin={isLogin}
                 key={idx}
                 type={input.type}
                 text={input.text}
@@ -29,14 +29,14 @@ const Form = ({
             ))
           : inputData.map((input, idx) => (
               <Input
-                name={formType}
+                isLogin={isLogin}
                 key={idx}
                 type={input.type}
                 text={input.text}
                 value={signInput[input.type]}
                 signInput={signInput}
                 handleInput={handleInput}
-                handleSignUpValid={signUpValidator[input.type]}
+                isValid={signUpValidator[input.type](signInput[input.type])}
               />
             ))}
         <Button title={title} signCommunication={signCommunication} />

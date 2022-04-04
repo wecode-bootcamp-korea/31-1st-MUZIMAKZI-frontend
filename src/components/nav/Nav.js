@@ -76,7 +76,7 @@ const Nav = () => {
           </ul>
         </div>
       </div>
-      {signModal ? <LoginSignup handleLoginModal={handleLoginModal} /> : null}
+      {signModal && <LoginSignup handleLoginModal={handleLoginModal} />}
     </nav>
   );
 };

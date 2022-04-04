@@ -4,7 +4,7 @@ import Form from './components/Form';
 import './LoginSignup.scss';
 
 const LoginSignup = ({ handleLoginModal }) => {
-  const [menuTab, setMenuTab] = useState('로그인');
+  const [isLogin, setIsLogin] = useState(true);
 
   const [signInInput, setSignInInput] = useState({
     email: '',
@@ -30,12 +30,12 @@ const LoginSignup = ({ handleLoginModal }) => {
     handleLoginModal();
   };
 
-  const signInCommunication = () => {
+  const signInCommunication = ({ signInInput: { email, password } }) => {
     fetch('http://10.58.2.45:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
-        email: signInInput.email,
-        password: signInInput.password,
+        email: email,
+        password: password,
       }),
     })
       .then(response => response.json())
@@ -46,15 +46,17 @@ const LoginSignup = ({ handleLoginModal }) => {
       });
   };
 
-  const signUpCommunication = () => {
+  const signUpCommunication = ({
+    signUpInput: { firstName, lastName, email, password, phoneNumber },
+  }) => {
     fetch('http://10.58.2.45:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        first_name: signUpInput.firstName,
-        last_name: signUpInput.lastName,
-        email: signUpInput.email,
-        password: signUpInput.password,
-        phone_number: signUpInput.phoneNumber,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password,
+        phone_number: phoneNumber,
       }),
     })
       .then(response => response.json())
@@ -74,7 +76,7 @@ const LoginSignup = ({ handleLoginModal }) => {
   };
 
   const handleLoginTabButton = () => {
-    setMenuTab('로그인');
+    setIsLogin(true);
     setSignUpInput({
       firstName: '',
       lastName: '',
@@ -85,7 +87,7 @@ const LoginSignup = ({ handleLoginModal }) => {
   };
 
   const handleSingupTabButton = () => {
-    setMenuTab('회원가입');
+    setIsLogin(false);
     setSignInInput({
       email: '',
       password: '',
@@ -95,7 +97,7 @@ const LoginSignup = ({ handleLoginModal }) => {
   const handleSingUpResult = result => {
     if (result.message === 'SUCCESS') {
       alert('회원가입에 성공하였습니다');
-      setMenuTab('로그인');
+      setIsLogin('로그인');
     } else if (result.message === 'ALREADY EXITSTS EMAIL') {
       alert('이미 가입된 회원입니다.');
     }
@@ -105,13 +107,13 @@ const LoginSignup = ({ handleLoginModal }) => {
       <div className="modalBg" onClick={handleLoginModal} />
       <div className="container">
         <div className="signHeader">
-          <h1>{menuTab}</h1>
+          <h1>{isLogin ? '로그인' : '회원가입'}</h1>
           <span className="signHeaderLogo">
             <span>MUZI</span>
             <img src="images/loginsignup/無知莫知.png" alt="무지막지로고" />
           </span>
         </div>
-        <ul className={menuTab === '로그인' ? 'loginTap' : 'signupTap'}>
+        <ul className={isLogin ? 'loginTap' : 'signupTap'}>
           <li>
             <button className="login" onClick={handleLoginTabButton}>
               로그인
@@ -123,9 +125,10 @@ const LoginSignup = ({ handleLoginModal }) => {
             </button>
           </li>
         </ul>
-        {menuTab === '로그인' ? (
+        {isLogin ? (
           <Form
             formType="signIn"
+            isLogin={isLogin}
             title="로그인"
             inputData={SIGNIN_DATA}
             signInput={signInInput}
@@ -137,6 +140,7 @@ const LoginSignup = ({ handleLoginModal }) => {
           <Form
             formType="signUp"
             title="회원가입"
+            isLogin={isLogin}
             inputData={SIGNUP_DATA}
             signInput={signUpInput}
             setSignInInput={setSignUpInput}
