@@ -40,22 +40,20 @@
 
     .sale {
       width: 30px;
-      margin-right: 4px;
-      border: 1px solid #7f0019;
-      background: #7f0019;
+      margin: 0 4px 1px 0;
+      background: $muziRed;
       color: #fff;
       font-size: 11px;
-      text-align: center;
+      @include borderBox($muziRed);
     }
 
     .onlineSize {
       width: 86px;
       margin-bottom: 1px;
-      border: 1px solid #7f0019;
       background: #fff;
-      color: #7f0019;
+      color: $muziRed;
       font-size: 11px;
-      text-align: center;
+      @include borderBox($muziRed);
     }
   }
 
@@ -69,21 +67,19 @@
     .freeShipping {
       width: 46px;
       margin-right: 4px;
-      border: 1px solid #7f0019;
       background: #fff;
-      color: #7f0019;
+      color: $muziRed;
       font-size: 11px;
-      text-align: center;
+      @include borderBox($muziRed);
     }
 
     .soldOut {
       width: 27px;
-      border: 1px solid #7f0019;
       background: #fff;
-      color: #7f0019;
+      color: $muziRed;
       background: #fff;
       font-size: 11px;
-      text-align: center;
+      @include borderBox($muziRed);
     }
   }
 }

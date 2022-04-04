@@ -28,7 +28,7 @@ const List = () => {
 
   return (
     <div className="list">
-      <div className="container">
+      <div className="pageContainer">
         <h4>남성니트</h4>
         <nav className="nextPage">
           <p className="textArea">

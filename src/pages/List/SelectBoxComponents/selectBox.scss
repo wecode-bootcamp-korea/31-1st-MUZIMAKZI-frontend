@@ -16,21 +16,21 @@
     .selectFir {
       float: left;
       padding: 0 16px;
-      border-right: 1px solid #cccccc;
+      border-right: 1px solid $muziLightGray;
     }
 
     .selectList {
       float: left;
       padding: 0 16px;
-      border-right: 1px solid #cccccc;
-      color: #999;
+      border-right: 1px solid $muziLightGray;
+      color: $muziGray;
     }
 
     .selectRed {
       float: left;
       padding: 0 16px;
-      border-right: 1px solid #cccccc;
-      color: #7f0019;
+      border-right: 1px solid $muziLightGray;
+      color: $muziRed;
     }
   }
 
@@ -55,7 +55,7 @@
     .more {
       width: 56px;
       height: 20px;
-      border: 1px solid #cccccc;
+      border: 1px solid $muziLightGray;
       background: #fff
         url('../../../../public/images/listpage/bg_select_li.gif') 100% 0
         no-repeat;
