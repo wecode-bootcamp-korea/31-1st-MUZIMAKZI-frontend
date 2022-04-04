@@ -3,88 +3,92 @@
 
 .container {
   display: flex;
-}
-.detailInform {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-.smallImageList {
-  display: flex;
-}
-#mainImage {
-  width: 400px;
-  height: 400px;
-}
-.sizeBtn {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  .rightBtn {
-    font-size: 12px;
-    color: #333;
+  .imageContainer {
+    #smallImageList {
+      display: flex;
+    }
   }
-}
-.colorInfo {
-  display: flex;
-  width: 200px;
-}
-.price {
-  font-size: 20px;
-}
-.textContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-.title {
-  font-size: 20px;
-}
-#titleName {
-  margin-top: 5px;
-}
-.textArea {
-  color: #333;
-  width: 80%;
-  font-size: 13px;
-  line-height: 16px;
-  border-top: 1px dotted #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 15px 0;
-  margin-top: 11px;
-}
-.sizeInfo {
-  display: flex;
-  height: 40px;
-}
-.button {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  overflow: hidden;
-  background: transparent;
-  width: 80%;
-}
-.btnContainer {
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  width: 100%;
-}
-#wishBtn {
-  border: 1px solid rgba(153, 153, 153, 0.7);
-  width: 80px;
-}
-#cartBtn {
-  border: 1px solid transparent;
-  width: 80px;
-  background-color: #333;
-  color: #fff;
-}
-#payBtn {
-  border: 0;
-  width:80px;
-  background-color: #7f0019;
-  color: #fff;
+  .detailInform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 50px;
+    .title {
+      font-size: 20px;
+    }
+    .textContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      #titleName {
+        margin-top: 5px;
+      }
+      .textInfo {
+      }
+    }
+  }
+  #mainImage {
+    width: 400px;
+    height: 400px;
+  }
+  .sizeBtn {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    .rightBtn {
+      font-size: 12px;
+      color: #333;
+    }
+  }
+  .colorInfo {
+    display: flex;
+    width: 200px;
+  }
+  .price {
+    font-size: 20px;
+  }
+  .textArea {
+    color: #333;
+    width: 80%;
+    font-size: 13px;
+    line-height: 16px;
+    border-top: 1px dotted #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 15px 0;
+    margin-top: 11px;
+  }
+  .sizeInfo {
+    display: flex;
+    height: 40px;
+  }
+  .button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: transparent;
+    width: 80%;
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+  }
+  #wishBtn {
+    border: 1px solid rgba(153, 153, 153, 0.7);
+    width: 80px;
+  }
+  #cartBtn {
+    border: 1px solid transparent;
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+  }
+  #payBtn {
+    border: 0;
+    width: 80px;
+    background-color: #7f0019;
+    color: #fff;
+  }
 }

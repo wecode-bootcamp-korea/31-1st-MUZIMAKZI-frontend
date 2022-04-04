@@ -1,10 +1,14 @@
 import React from 'react';
 import '../DetailComponent/TextInfo.scss';
-const TextInfo = ({ price, 배송비 }) => {
+
+const TextInfo = ({ id, name, price, size, color, description }) => {
   return (
     <div>
-      <p className="price">{price}</p>
-      <p>{배송비}</p>
+      <p>{name}</p>
+      <p>{price}</p>
+      <p>{size[0]}</p>
+      <p>{color[0]}</p>
+      <p>{description}</p>
     </div>
   );
 };

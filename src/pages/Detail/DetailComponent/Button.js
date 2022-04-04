@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../DetailComponent/Button.scss';
 const Button = () => {
   const [amount, setAmount] = useState(0);
+
   return (
     <>
       <div className="button">

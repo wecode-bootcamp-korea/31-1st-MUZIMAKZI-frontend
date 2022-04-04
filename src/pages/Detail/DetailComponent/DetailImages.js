@@ -1,5 +1,5 @@
 import React from 'react';
-import '../DetailComponent/DetailSmallImage.scss';
+import '../DetailComponent/DetailImages.scss';
 const DetailImage = () => {
   return (
     <div>

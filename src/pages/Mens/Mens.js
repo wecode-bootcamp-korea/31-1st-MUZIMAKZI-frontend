@@ -2,36 +2,38 @@ import React, { useEffect, useState } from 'react';
 import './Mens.scss';
 import MensList from './MensComponent/MensList';
 import './MensComponent/MensList.scss';
+
 const Mens = () => {
-  const [mensListArray, setMensListArray] = useState();
+  const [mensList, setMensList] = useState();
 
   useEffect(() => {
     fetch('data/mensListData.json')
       .then(res => res.json())
-      .then(res => setMensListArray(res))
+      .then(res => setMensList(res))
       .catch(e => console.error(e));
   }, []);
 
   return (
     <>
-      <div className="Mens">
-        <div className="main">
+      <div className="mens">
+        <div className="pageContainer">
           <h5 className="titleH5">남성복</h5>
-          <div className="categoryImgTypeA">
+          <div className="categoryImg">
             <img
-              src="http://image.mujikorea.net/display/corner/202/220323_man_category_img.jpg"
+              className="mensMainImage"
+              src="/images/menswear/mensMainPic.jpg"
               alt="남성"
             />
           </div>
           <div className="smallImage">
-            {mensListArray &&
-              mensListArray.map(List => {
+            {mensList &&
+              mensList.map(({ id, name, thumbnail }) => {
                 return (
                   <MensList
-                    key={List.id}
-                    id={List.id}
-                    name={List.name}
-                    thumbnail={List.thumbnail}
+                    key={id}
+                    id={id}
+                    name={name}
+                    thumbnail={thumbnail}
                   />
                 );
               })}

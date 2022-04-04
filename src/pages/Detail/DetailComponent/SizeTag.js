@@ -3,7 +3,7 @@ import '../DetailComponent/SizeTag.scss';
 const SizeTag = ({ id, thumbnail }) => {
   return (
     <div>
-      <img src={thumbnail}></img>
+      <img id="sizeTag" src={thumbnail} alt=""></img>
     </div>
   );
 };

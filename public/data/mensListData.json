@@ -2,26 +2,26 @@
   {
     "id": 0,
     "name": "남성 니트",
-    "thumbnail": "http://image.mujikorea.net/display/shop/MJ1A01A01A01/2021-03-25_m01.png"
+    "thumbnail":"/images/menswear/tShirt.jpg"
   },
   {
     "id": 1,
     "name": "남성컷맨소",
-    "thumbnail": "http://image.mujikorea.net/display/shop/MJ1A01A01A01/2021-03-25_m01.png"
+    "thumbnail": "/images/menswear/tShirt.jpg"
   },
   {
     "id": 2,
     "name": "남성셔츠",
-    "thumbnail": "http://image.mujikorea.net/display/shop/MJ1A01A01A01/2021-03-25_m01.png"
+    "thumbnail": "/images/menswear/tShirt.jpg"
   },
   {
     "id": 3,
     "name": "남성아웃트탑",
-    "thumbnail": "http://image.mujikorea.net/display/shop/MJ1A01A01A01/2021-03-25_m01.png"
+    "thumbnail": "/images/menswear/tShirt.jpg"
   },
   {
     "id": 4,
     "name": "남성하의",
-    "thumbnail": "http://image.mujikorea.net/display/shop/MJ1A01A01A01/2021-03-25_m01.png"
+    "thumbnail": "/images/menswear/tShirt.jpg"
   }
 ]
