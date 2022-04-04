@@ -4,20 +4,18 @@ import './SelectBox.scss';
 
 const SelectBox = () => {
   return (
-    <>
-      <div className="selectBox">
-        <ul className="selectText">
-          {SELECTTEXT_DATA.map(select => (
-            <SelectText key={select.id} {...select} />
-          ))}
-        </ul>
-        <ul className="selectBtnGroup">
-          <li className="imageBtn"></li>
-          <li className="imageListBtn"></li>
-          <li className="more">50</li>
-        </ul>
-      </div>
-    </>
+    <div className="selectBox">
+      <ul className="selectText">
+        {SELECTTEXT_DATA.map(select => (
+          <SelectText key={select.id} {...select} />
+        ))}
+      </ul>
+      <ul className="selectBtnGroup">
+        <li className="imageBtn" />
+        <li className="imageListBtn" />
+        <li className="more">50</li>
+      </ul>
+    </div>
   );
 };
 
