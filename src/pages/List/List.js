@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
+import ItemList from './ItemListComponents/ItemList';
 import './List.scss';
 
 const List = () => {
