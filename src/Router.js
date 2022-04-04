@@ -15,21 +15,17 @@ import Nav from './components/nav/Nav';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
-      <div className="mainContainer">
-        <Aside />
-        <Routes>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/detail" element={<Detail />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/mens" element={<Mens />} />
-          <Route path="/womens" element={<Womens />} />
-          <Route path="/labo" element={<Labo />} />
-          <Route path="/" element={<Landing />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/mens" element={<Mens />} />
+        <Route path="/womens" element={<Womens />} />
+        <Route path="/labo" element={<Labo />} />
+        <Route path="/" element={<Landing />} />
+      </Routes>
     </BrowserRouter>
   );
 };
