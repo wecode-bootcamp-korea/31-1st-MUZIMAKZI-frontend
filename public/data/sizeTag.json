@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "thumbnail": "http://image.mujikorea.net/goodsProp/chip/chip_SIZE_S.gif"
+  },
+  {
+    "id": 1,
+    "thumbnail": "http://image.mujikorea.net/goodsProp/chip/chip_SIZE_M.gif"
+  },
+  {
+    "id": 2,
+    "thumbnail": "http://image.mujikorea.net/goodsProp/chip/chip_SIZE_L.gif"
+  },
+  {
+    "id": 3,
+    "thumbnail": "http://image.mujikorea.net/goodsProp/chip/chip_SIZE_XL.gif"
+  },
+  {
+    "id": 4,
+    "thumbnail":"http://image.mujikorea.net/goodsProp/chip/chip_SIZE_XXL.gif"
+  }
+]
