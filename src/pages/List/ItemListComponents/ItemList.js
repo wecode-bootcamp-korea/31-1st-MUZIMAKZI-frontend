@@ -3,7 +3,6 @@ import './ItemList.scss';
 
 function ItemList({ name, price, thumbnail_image_url }) {
   return (
-    // 카드에대한 컨테이너
     <li className="itemList">
       <img className="listImg" src={thumbnail_image_url} alt="남자니트" />
       <div className="listIcons">

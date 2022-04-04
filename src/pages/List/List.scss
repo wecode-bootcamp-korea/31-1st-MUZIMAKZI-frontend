@@ -1,9 +1,8 @@
 @import '../../styles/variables.scss';
 
-.List {
+.list {
   width: 1060px;
   margin: auto;
-  height: 3000px;
 
   .container {
     width: 760px;
@@ -15,32 +14,38 @@
       font-size: 14px;
       font-weight: bold;
     }
-    p {
-      font-weight: 300;
-      font-size: 13px;
-      b {
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: $muziRed;
-      }
-    }
+
     .nextPage {
       display: flex;
       justify-content: space-between;
+
+      .textArea {
+        font-size: 13px;
+        font-weight: 300;
+
+        b {
+          margin-bottom: 10px;
+          color: $muziRed;
+          font-size: 14px;
+        }
+      }
+
       ul {
         display: flex;
         justify-content: flex-end;
+        .btnPageL {
+          margin-right: 5px;
+        }
       }
-      .btnPageL {
-        margin-right: 5px;
-      }
+
       strong {
+        display: inline-block;
+        padding: 1px 4px 1px;
         border: 1px solid #7f0019;
         color: #7f0019;
-        padding: 1px 4px 1px;
         font-size: 11px;
-        display: inline-block;
       }
+
       .btnPageR {
         margin-left: 5px;
       }
@@ -52,31 +57,33 @@
       margin-top: 26px;
       border: 1px solid rgb(214, 214, 214);
       background-color: #ebebeb;
+
       .selectText {
         display: flex;
         padding: 8px;
         font-size: 12px;
         cursor: pointer;
+
         .selectFir {
           float: left;
           padding: 0 16px;
-          font-weight: bold;
           border-right: 1px solid #cccccc;
+          font-weight: bold;
         }
+
         .selectList {
           float: left;
           padding: 0 16px;
-          font-weight: bold;
-          color: #999;
           border-right: 1px solid #cccccc;
+          color: #999;
+          font-weight: bold;
         }
+
         .selectRed {
           float: left;
           padding: 0 16px;
-          font-weight: bold;
-          color: #999;
-          color: #7f0019;
           border-right: 1px solid #cccccc;
+          color: #7f0019;
         }
       }
 
@@ -101,19 +108,19 @@
         .more {
           width: 56px;
           height: 20px;
-          font-size: 12px;
           border: 1px solid #cccccc;
           background: #fff
             url('../../../public/images/listpage/bg_select_li.gif') 100% 0
             no-repeat;
+          font-size: 12px;
         }
       }
     }
+
     .itemBox {
       display: flex;
-      margin-top: 50px;
       flex-wrap: wrap;
-      // width: 130px;
+      margin-top: 50px;
     }
   }
 }

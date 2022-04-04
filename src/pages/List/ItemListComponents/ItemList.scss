@@ -3,68 +3,86 @@
 .itemList {
   height: 400px;
   margin-right: 27.5px;
+
   &:nth-child(5n) {
     margin-right: 0;
   }
+
   .listImg {
     width: 130px;
     height: 130px;
   }
+
   .listIcons {
     .itemListImg {
       margin-right: 5px;
     }
-    .itemListImg {
-    }
   }
+
   .listText {
-    word-wrap: break-word;
+    width: 130px;
     margin-top: 16px;
     font-size: 13px;
-    width: 130px;
+    word-wrap: break-word;
   }
+
   .listPrice {
     padding: 30px 0 0 79px;
     font-size: 12px;
   }
+
   .tagTop {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     padding: 5px 3px 2px;
     letter-spacing: -0.5px;
+
     .sale {
+      width: 30px;
+      margin-right: 4px;
       border: 1px solid #7f0019;
-      color: #fff;
       background: #7f0019;
+      color: #fff;
       font-size: 11px;
       text-align: center;
     }
+
     .onlineSize {
-      border: 1px solid #7f0019;
-      color: #7f0019;
-      background: #fff;
-      font-size: 11px;
       width: 86px;
-      text-align: center;
       margin-bottom: 1px;
+      border: 1px solid #7f0019;
+      background: #fff;
+      color: #7f0019;
+      font-size: 11px;
+      text-align: center;
     }
   }
+
   .tagBottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 5px 3px 2px;
+    letter-spacing: -0.5px;
+
     .freeShipping {
-      border: 1px solid #7f0019;
-      color: #7f0019;
-      background: #fff;
-      font-size: 11px;
       width: 46px;
+      margin-right: 4px;
+      border: 1px solid #7f0019;
+      background: #fff;
+      color: #7f0019;
+      font-size: 11px;
       text-align: center;
     }
+
     .soldOut {
+      width: 27px;
       border: 1px solid #7f0019;
+      background: #fff;
       color: #7f0019;
       background: #fff;
       font-size: 11px;
-      width: 46px;
       text-align: center;
     }
   }

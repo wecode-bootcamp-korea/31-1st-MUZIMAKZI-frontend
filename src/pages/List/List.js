@@ -5,7 +5,7 @@ import './List.scss';
 const List = () => {
   const [ItemInfo, setItemInfo] = useState([]);
 
-  //데이터 정보
+  //백엔드 데이터 정보
   // useEffect(() => {
   //   fetch('http://10.58.7.79:8000/products/categories/list', {
   //     method: 'POST',
@@ -26,31 +26,31 @@ const List = () => {
   }, []);
 
   return (
-    <div className="List">
+    <div className="list">
       <div className="container">
         <h4>남성니트</h4>
-        <div className="nextPage">
-          <p>
+        <nav className="nextPage">
+          <p className="textArea">
             총 <b>131개</b>의 상품이 있습니다.
           </p>
           <ul>
             <li className="btnPageL">
-              <img src="/images/listpage/btn_first_dim.gif" alt="" />
+              <img src="/images/listpage/btn_first_dim.gif" alt="button" />
             </li>
             <li className="btnPageL">
-              <img src="/images/listpage/btn_prev_dim.gif" alt="" />
+              <img src="/images/listpage/btn_prev_dim.gif" alt="button" />
             </li>
             <li>
               <strong>1</strong>
             </li>
             <li className="btnPageR">
-              <img src="/images/listpage/btn_next_dim.gif" alt="" />
+              <img src="/images/listpage/btn_next_dim.gif" alt="button" />
             </li>
             <li className="btnPageR">
-              <img src="/images/listpage/btn_last_dim.gif" alt="" />
+              <img src="/images/listpage/btn_last_dim.gif" alt="button" />
             </li>
           </ul>
-        </div>
+        </nav>
         <div className="selectBox">
           <ul className="selectText">
             <li className="selectFir">전체</li>
@@ -77,3 +77,34 @@ const List = () => {
   );
 };
 export default List;
+
+const SELECTTEXT_DATA = [
+  {
+    id: 1,
+    list: '전체',
+  },
+  {
+    id: 2,
+    list: '온라인 한정 사이즈',
+  },
+  {
+    id: 3,
+    list: '무료배송',
+  },
+  {
+    id: 4,
+    list: 'SALE',
+  },
+  {
+    id: 5,
+    list: '품절',
+  },
+  {
+    id: 6,
+    list: '낮은가격',
+  },
+  {
+    id: 7,
+    list: '높은가격',
+  },
+];
