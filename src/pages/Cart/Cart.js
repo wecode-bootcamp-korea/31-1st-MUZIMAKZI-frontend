@@ -6,13 +6,13 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/data/CartData.json')
+    fetch('http://localhost:3000/data/CartData.json')
       .then(res => res.json())
       .then(res => {
         setCartItems(res);
       });
   }, []);
-  console.log(cartItems);
+
   return (
     <div className="cart">
       <div className="pageContainer">

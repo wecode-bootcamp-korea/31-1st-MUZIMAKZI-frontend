@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CartItemCell.scss';
-const CartItemCell = ({ cartItem: { product_name, size, color, Price } }) => {
+const CartItemCell = ({
+  cartItem: { product_name, size, color, price, thumbnail, count },
+}) => {
+  const [itemCount, setItemCount] = useState(count);
+
+  const sum = price * count;
+
+  const handleCount = e => {
+    const { value } = e.target;
+    setItemCount(value);
+  };
+
+  const handleChangeCount = () => {
+    alert('수량을 변경하시겠습니까?');
+    alert('변경되었습니다.');
+  };
+
   return (
     <tr className="CartItemCell">
       <td className="prdImg">
         <span>
           <input type="checkbox" />
         </span>
-        <img
-          src="http://image.mujikorea.net/goods/31/14/35/71/BAD76A2S_COL_939_80.jpg"
-          alt=""
-        />
+        <img src={`images/cartpage/${thumbnail}`} alt={thumbnail} />
       </td>
       <td className="prdInfo">
         <p className="prdName">{product_name}</p>
@@ -20,20 +33,25 @@ const CartItemCell = ({ cartItem: { product_name, size, color, Price } }) => {
         </ul>
       </td>
       <td className="prdPrice">
-        <p>[판매가] {Price}</p>
+        <p>[판매가] {price}</p>
       </td>
       <td className="prdQty">
         <ul>
           <li>
-            <input type="number" />
+            <input
+              type="number"
+              min="1"
+              onChange={handleCount}
+              value={itemCount}
+            />
           </li>
           <li>
-            <button>변경</button>
+            <button onClick={handleChangeCount}>변경</button>
           </li>
         </ul>
       </td>
       <td className="prdSum">
-        <p>00,000 원</p>
+        <p>{sum} 원</p>
       </td>
       <td className="prdOrder">
         <ul>
