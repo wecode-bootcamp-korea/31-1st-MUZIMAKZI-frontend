@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CartItemCell from './components/CartItemCell';
 import './Cart.scss';
 
 const Cart = () => {
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/data/CartData.json')
+      .then(res => res.json())
+      .then(res => {
+        setCartItems(res);
+      });
+  }, []);
+  console.log(cartItems);
   return (
     <div className="cart">
       <div className="pageContainer">
@@ -43,9 +53,9 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody className="cartListBody">
-            <EmptyCart />
-            <CartItemCell />
-            <CartItemCell />
+            {cartItems.map((cartItem, idx) => {
+              return <CartItemCell key={idx} cartItem={cartItem} />;
+            })}
           </tbody>
         </table>
         <div className="cartCalc">

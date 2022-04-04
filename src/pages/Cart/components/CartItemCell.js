@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartItemCell.scss';
-const CartItemCell = () => {
+const CartItemCell = ({ cartItem: { product_name, size, color, Price } }) => {
   return (
     <tr className="CartItemCell">
       <td className="prdImg">
@@ -13,14 +13,14 @@ const CartItemCell = () => {
         />
       </td>
       <td className="prdInfo">
-        <p className="prdName">제품명 줄줄줄줄줄줄줄줄줄</p>
+        <p className="prdName">{product_name}</p>
         <ul className="prdOption">
-          <li>COLOR : LIGHT SILVER GRAY</li>
-          <li>SIZE : XL</li>
+          <li>COLOR : {color}</li>
+          <li>SIZE : {size}</li>
         </ul>
       </td>
       <td className="prdPrice">
-        <p>[판매가] 00,000</p>
+        <p>[판매가] {Price}</p>
       </td>
       <td className="prdQty">
         <ul>
