@@ -14,7 +14,7 @@ const Mens = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="mens">
         <div className="pageContainer">
           <h5 className="titleH5">남성복</h5>
@@ -40,7 +40,7 @@ const Mens = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
