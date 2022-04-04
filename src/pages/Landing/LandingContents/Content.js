@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import LandingContents from '../LandingContents/LandingContents';
 
 const Content = ({ firstContentsList, setFirstContentsList }) => {
-  // const [firstContentsList, setFirstContentsList] = useState([]);
-
   useEffect(() => {
     fetch('data/contentslist.json')
       .then(res => res.json())

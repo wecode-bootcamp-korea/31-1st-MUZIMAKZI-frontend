@@ -12,7 +12,7 @@ button {
   z-index: 100;
 }
 
-.btn-prev {
+.btnPrev {
   position: absolute;
   left: 0%;
   top: 45%;
@@ -21,7 +21,7 @@ button {
   @include btn;
 }
 
-.btn-next {
+.btnNext {
   position: absolute;
   right: 0;
   top: 45%;
