@@ -4,26 +4,12 @@ import SelectBox from './SelectBoxComponents/SelectBox';
 import './List.scss';
 
 const List = () => {
-  const [ItemInfo, setItemInfo] = useState([]);
-
-  //백엔드 데이터 정보
-  // useEffect(() => {
-  //   fetch('http://10.58.7.79:8000/products/categories/list', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       type_id: 1,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setItemInfo(data.message);
-  //     });
-  // }, []);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/MockData.json')
+    fetch('/data/MockData.json')
       .then(res => res.json())
-      .then(data => setItemInfo(data));
+      .then(data => setProducts(data));
   }, []);
 
   return (
@@ -53,9 +39,9 @@ const List = () => {
           </ul>
         </nav>
         <SelectBox />
-        <ul className="itemBox">
-          {ItemInfo.map(item => (
-            <ItemList key={item.id} {...item} />
+        <ul className="product">
+          {products.map(product => (
+            <ItemList key={product.id} {...product} />
           ))}
         </ul>
       </div>

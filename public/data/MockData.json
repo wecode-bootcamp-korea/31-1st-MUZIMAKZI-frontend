@@ -3,7 +3,8 @@
     "id": 1,
     "name": "울 혼방 더블 페이스 하이넥 스웨터",
     "price": "19,900",
-    "thumbnail_image_url": "../images/listpage/image1.jpg"
+    "thumbnail_image_url": "../images/listpage/image1.jpg",
+    "tag": 
   },
   {
     "id": 2,
