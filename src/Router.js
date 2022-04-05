@@ -9,10 +9,11 @@ import Mens from './pages/Mens/Mens';
 import Womens from './pages/Womens/Womens';
 import Landing from './pages/Landing/Landing';
 import Labo from './pages/Labo/Labo';
-
+import Aside from './components/aside/Aside';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Aside />
       <Routes>
         <Route path="/cart" element={<Cart />} />
         <Route path="/detail" element={<Detail />} />
