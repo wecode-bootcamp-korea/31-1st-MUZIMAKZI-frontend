@@ -5,31 +5,22 @@ import Content from './LandingContents/Content';
 import Slider from './Slider/Slider';
 
 const Landing = () => {
-  const [swiperList, setSwiperList] = useState([]);
-  const [firstContentsList, setFirstContentsList] = useState([]);
+  const [imgList, setImgList] = useState({});
 
   useEffect(() => {
     fetch('/data/swiperItems.json')
       .then(res => res.json())
       .then(data => {
-        setSwiperList(data);
+        setImgList(data);
       });
-  }, [setSwiperList]);
-
-  useEffect(() => {
-    fetch('/data/contentslist.json')
-      .then(res => res.json())
-      .then(data => {
-        setFirstContentsList(data);
-      });
-  }, [setFirstContentsList]);
+  }, [setImgList]);
 
   return (
     <div className="landing">
       <div className="pageContainer">
         <div className="contents">
-          <Slider swiperList={swiperList} />
-          <Content firstContentsList={firstContentsList} />
+          <Slider swiperList={imgList.landings} />
+          <Content firstContentsList={imgList.promotes} />
         </div>
       </div>
     </div>

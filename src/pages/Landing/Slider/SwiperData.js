@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SwiperData = ({ img_url }) => {
+const SwiperData = ({ landing_image_url }) => {
   return (
     <li>
-      <img src={img_url} alt="autoSlider" />
+      <img src={landing_image_url} alt="autoSlider" />
     </li>
   );
 };

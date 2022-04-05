@@ -46,9 +46,10 @@ const Slider = ({ swiperList }) => {
               transform: `translateX(${-760 * (0.5 + currentIndex)}px)`,
             }}
           >
-            {swiperList.map(swiperImg => {
-              return <SwiperData key={swiperImg.id} {...swiperImg} />;
-            })}
+            {swiperList &&
+              swiperList.map(swiperImg => {
+                return <SwiperData key={swiperImg.id} {...swiperImg} />;
+              })}
           </div>
         </div>
       </div>
