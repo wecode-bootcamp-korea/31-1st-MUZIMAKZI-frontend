@@ -1,17 +1,8 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LandingContents from '../LandingContents/LandingContents';
 
-const Content = ({ firstContentsList, setFirstContentsList }) => {
-  useEffect(() => {
-    fetch('data/contentslist.json')
-      .then(res => res.json())
-      .then(data => {
-        setFirstContentsList(data);
-      });
-  }, [setFirstContentsList]);
-
+const Content = ({ firstContentsList }) => {
   return (
     <div className="firstContents">
       <div className="firstTop">
@@ -21,8 +12,8 @@ const Content = ({ firstContentsList, setFirstContentsList }) => {
         </Link>
       </div>
       <ul className="firstBottom">
-        {firstContentsList.map(contentList => {
-          return <LandingContents key={contentList.id} {...contentList} />;
+        {firstContentsList.map(content => {
+          return <LandingContents key={content.id} {...content} />;
         })}
       </ul>
     </div>

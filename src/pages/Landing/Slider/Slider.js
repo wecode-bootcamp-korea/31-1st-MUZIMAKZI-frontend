@@ -1,27 +1,16 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SwiperData from '../Slider/SwiperData';
 import SliderButton from '../Slider/SliderButton';
 
-const Slider = ({
-  swiperList,
-  setSwiperList,
-  currentIndex,
-  setCurrentIndex,
-}) => {
-  useEffect(() => {
-    fetch('data/swiperItems.json')
-      .then(res => res.json())
-      .then(data => {
-        setSwiperList(data);
-      });
-  }, [setSwiperList]);
+const Slider = ({ swiperList }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   function handleSlide(currentIndex) {
     if (currentIndex === swiperList.length) {
       currentIndex = 0;
     } else if (currentIndex < 0) {
-      currentIndex = 4;
+      currentIndex = swiperList.length - 1;
     }
     setCurrentIndex(currentIndex);
   }
@@ -57,8 +46,8 @@ const Slider = ({
               transform: `translateX(${-760 * (0.5 + currentIndex)}px)`,
             }}
           >
-            {swiperList.map(imgList => {
-              return <SwiperData key={imgList.id} {...imgList} />;
+            {swiperList.map(swiperImg => {
+              return <SwiperData key={swiperImg.id} {...swiperImg} />;
             })}
           </div>
         </div>
