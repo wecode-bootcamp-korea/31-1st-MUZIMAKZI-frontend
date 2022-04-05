@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss';
+
+.labo {
+  width: 100%;
+  text-align: center;
+
+  .container {
+    position: relative;
+    @include defaultWidth;
+
+    img {
+      width: 760px;
+    }
+
+    .labo {
+      img {
+        width: 760px;
+      }
+
+      .laboTitle {
+        position: absolute;
+        top: 860px;
+        left: 200px;
+        font-size: 70px;
+        font-weight: 400;
+      }
+
+      .laboFlex {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+
+        .laboText {
+          margin: 65px 0 0 200px;
+          @include font(14px);
+        }
+
+        .laboSize {
+          margin: 65px 200px 0 0;
+          @include font(12px);
+        }
+      }
+    }
+
+    .viewProductBox {
+      width: 760px;
+      @include space(25px, 0 auto);
+      @include borderBox($muziLightGray);
+      cursor: pointer;
+
+      .viewProductBtn {
+        @include flexCenter;
+        margin: 0 auto;
+        font-size: 12px;
+      }
+    }
+  }
+}
