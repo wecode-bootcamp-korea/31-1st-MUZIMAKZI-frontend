@@ -1,17 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ItemList from './ItemListComponents/ItemList';
 import SelectBox from './SelectBoxComponents/SelectBox';
 import './List.scss';
 
 const List = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log('로케이션:', location);
+
+  // TODO : MOCK 데이터
+  // useEffect(() => {
+  //   fetch('/data/MockData.json')
+  //     .then(res => res.json())
+  //     .then(data => setProducts(data));
+  // }, []);
+
+  // const API_URL = 'http://127.0.0.1:8000/products/${location.search}';
+  const API_URL = `http://10.58.1.246:8000/products/categories${location.search}`;
+
+  const getFetch = () => {
+    fetch(`${API_URL}`)
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data.message);
+      });
+  };
 
   useEffect(() => {
-    fetch('/data/MockData.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
-  }, []);
+    getFetch();
+    console.log(products);
+  }, [location.search]);
 
+  const updateParams = param => {
+    navigate(`/products/categories${location.search}${param}`);
+  };
   return (
     <div className="list">
       <div className="pageContainer">
@@ -38,11 +63,10 @@ const List = () => {
             </li>
           </ul>
         </nav>
-        <SelectBox />
+        <SelectBox updateParams={updateParams} />
         <ul className="product">
-          {products.map(product => (
-            <ItemList key={product.id} {...product} />
-          ))}
+          {products &&
+            products.map(product => <ItemList key={product.id} {...product} />)}
         </ul>
       </div>
     </div>

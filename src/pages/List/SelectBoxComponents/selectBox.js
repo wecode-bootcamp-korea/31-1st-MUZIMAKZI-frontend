@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import SelectText from '../SelectTextComponents/SelectText';
 import './SelectBox.scss';
 
-const SelectBox = () => {
+const SelectBox = ({ updateParams }) => {
   return (
     <div className="selectBox">
       <ul className="selectText">
-        {SELECTTEXT.map(select => (
-          <SelectText key={select.id} {...select} />
-        ))}
+        {SELECTTEXT_DATA.map((select, idx) => {
+          return (
+            <SelectText
+              idx={idx + 1}
+              key={select.id}
+              list={select.list}
+              updateParams={updateParams}
+            />
+          );
+        })}
       </ul>
       <ul className="selectBtnGroup">
         <li className="imageBtn" />
@@ -21,33 +29,21 @@ const SelectBox = () => {
 
 export default SelectBox;
 
-const SELECTTEXT = [
+const SELECTTEXT_DATA = [
   {
     id: 1,
-    list: '전체',
-  },
-  {
-    id: 2,
     list: '온라인 한정 사이즈',
   },
   {
-    id: 3,
+    id: 2,
     list: '무료배송',
   },
   {
-    id: 4,
+    id: 3,
     list: 'SALE',
   },
   {
-    id: 5,
+    id: 4,
     list: '품절',
-  },
-  {
-    id: 6,
-    list: '낮은가격',
-  },
-  {
-    id: 7,
-    list: '높은가격',
   },
 ];

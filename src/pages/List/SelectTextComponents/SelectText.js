@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SelectText = ({ list }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const handleBtn = () => {
-    console.log('test');
-    setIsClicked(!isClicked);
+const SelectText = ({ list, updateParams, idx }) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const handleSelectBtn = () => {
+    setIsSelected(!isSelected);
   };
 
   return (
-    <li
-      className={`${isClicked ? 'btnBold' : null} selectTagBtn`}
-      onClick={handleBtn}
-    >
-      {list}
-    </li>
+    <div onClick={goToDetail}>
+      <li
+        className={`${isSelected ? 'btnBold' : null} selectTagBtn`}
+        onClick={() => {
+          handleSelectBtn();
+          updateParams(`&tags=${idx}`);
+        }}
+      >
+        {list}
+      </li>
+    </div>
   );
 };
 export default SelectText;
