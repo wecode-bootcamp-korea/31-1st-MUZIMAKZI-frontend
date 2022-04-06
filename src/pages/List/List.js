@@ -30,6 +30,7 @@ const List = () => {
 
   useEffect(() => {
     getFetch();
+    // console.log(products);
   }, [location.search]);
 
   return (
