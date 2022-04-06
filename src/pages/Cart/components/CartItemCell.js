@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './CartItemCell.scss';
 const CartItemCell = ({
-  cartItem: { product_name, size, color, price, thumbnail, count },
+  cartItem: { name, size, color, price, thumbnail_url, quantity },
 }) => {
-  const [itemCount, setItemCount] = useState(count);
+  const [itemCount, setItemCount] = useState(quantity);
 
-  const sum = price * count;
+  const sum = price * quantity;
 
   const handleCount = e => {
     const { value } = e.target;
@@ -23,17 +23,17 @@ const CartItemCell = ({
         <span>
           <input type="checkbox" />
         </span>
-        <img src={`images/cartpage/${thumbnail}`} alt={thumbnail} />
+        <img src={`${thumbnail_url}`} alt="cartImg" />
       </td>
       <td className="prdInfo">
-        <p className="prdName">{product_name}</p>
+        <p className="prdName">{name}</p>
         <ul className="prdOption">
           <li>COLOR : {color}</li>
           <li>SIZE : {size}</li>
         </ul>
       </td>
       <td className="prdPrice">
-        <p>[판매가] {price}</p>
+        <p>[판매가] {parseInt(price)}</p>
       </td>
       <td className="prdQty">
         <ul>

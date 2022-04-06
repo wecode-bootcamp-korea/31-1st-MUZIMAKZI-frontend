@@ -3,7 +3,7 @@ import CartItemCell from './components/CartItemCell';
 import './Cart.scss';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState();
   let priceSum = 0;
   let shippingFee = 3000;
   // useEffect(() => {
@@ -15,17 +15,17 @@ const Cart = () => {
   // }, []);
 
   useEffect(() => {
-    fetch('http://10.58.2.42:8000/carts', {
+    fetch('http://10.58.2.42:8000/carts/1', {
       header: JSON.stringify({
         user_id: 1,
       }),
     })
       .then(response => response.json())
-      .then(res => {
-        setCartItems(res);
+      .then(data => {
+        setCartItems(data.message);
       });
   }, []);
-
+  console.log(cartItems);
   return (
     <div className="cart">
       <div className="pageContainer">
@@ -68,7 +68,7 @@ const Cart = () => {
           <tbody className="cartListBody">
             {cartItems &&
               cartItems.map((cartItem, idx) => {
-                priceSum += cartItem.price * cartItem.count;
+                priceSum += cartItem.price * cartItem.quantity;
                 shippingFee = priceSum > 30000 && 0;
                 return <CartItemCell key={idx} cartItem={cartItem} />;
               })}

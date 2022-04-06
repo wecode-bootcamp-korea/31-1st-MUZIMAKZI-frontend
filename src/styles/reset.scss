@@ -81,7 +81,7 @@ select,
 textarea,
 button {
   font-size: 14px;
-
+  border: none;
   font-family: 'Noto Sans KR', sans-serif;
 }
 a {
@@ -102,13 +102,14 @@ var {
   font-style: normal;
   font-weight: normal;
 }
-table {
-  width: 100%; /*border-collapse:collapse;*/
-  border-spacing: 0;
-}
+
 caption,
 legend {
   font-size: 0;
   line-height: 0;
   height: 0;
+}
+table {
+  width: 100%; /*border-collapse:collapse;*/
+  border-spacing: 0;
 }
