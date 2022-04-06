@@ -9,10 +9,10 @@ const Aside = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/data/categorylist.json')
+    fetch('http://10.58.1.246:8000/main')
       .then(res => res.json())
       .then(data => {
-        setCategoryList(data.side);
+        setCategoryList(data.side_info);
       });
   }, []);
 
