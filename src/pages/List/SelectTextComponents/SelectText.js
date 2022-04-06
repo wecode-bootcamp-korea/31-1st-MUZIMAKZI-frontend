@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SelectText = ({ list, updateParams, idx }) => {
+const SelectText = ({ list, idx }) => {
   const [isSelected, setIsSelected] = useState(false);
+  const navigate = useNavigate();
   const handleSelectBtn = () => {
     setIsSelected(!isSelected);
+    navigate(`?type_id=1&tags=${idx}`);
   };
 
   return (
-    <div onClick={goToDetail}>
+    <div>
       <li
         className={`${isSelected ? 'btnBold' : null} selectTagBtn`}
-        onClick={() => {
-          handleSelectBtn();
-          updateParams(`&tags=${idx}`);
-        }}
+        onClick={handleSelectBtn}
       >
         {list}
       </li>

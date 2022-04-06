@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ItemList.scss';
 
-function ItemList({ name, price, thumbnail_image_url }) {
+function ItemList({ name, price, thumbnail_image_url, idx }) {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const goToDetail = () => {
+    navigate(`/detail/${idx + 1}`);
+  };
   return (
-    <li className="itemList">
+    <li className="itemList" onClick={goToDetail}>
       <img className="listImg" src={thumbnail_image_url} alt="남자니트" />
       <div className="listIcons">
         <img
