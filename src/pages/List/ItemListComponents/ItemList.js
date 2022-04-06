@@ -25,7 +25,7 @@ function ItemList({ name, price, thumbnail_image_url, idx }) {
       </div>
       <div className="listText">{name}</div>
       <div className="listPrice">
-        <b>{price}</b>원
+        <b>{Math.floor(price)}</b>원
       </div>
       <div className="tagTop">
         <span className="sale">SALE</span>

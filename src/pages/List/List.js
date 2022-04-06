@@ -8,16 +8,12 @@ const List = () => {
   const [products, setProducts] = useState([]);
   const location = useLocation();
 
-  console.log('연결되니:', location);
-
-  // TODO : MOCK 데이터
   useEffect(() => {
     fetch('/data/MockData.json')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
 
-  // const API_URL = 'http://127.0.0.1:8000/products/${location.search}';
   const API_URL = `http://10.58.1.246:8000/products/categories${location.search}`;
 
   const getFetch = () => {
@@ -30,7 +26,7 @@ const List = () => {
 
   useEffect(() => {
     getFetch();
-    // console.log(products);
+    console.log(products);
   }, [location.search]);
 
   return (
