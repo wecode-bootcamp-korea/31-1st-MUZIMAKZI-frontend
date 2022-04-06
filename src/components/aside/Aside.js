@@ -1,34 +1,46 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { type } from 'sass';
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import './Aside.scss';
 
 const Aside = () => {
-  const [categoryList, setCategoryList] = useState(0);
+  const [categoryList, setCategoryList] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    fetch('data/categorylist.json')
+    fetch('http://10.58.1.246:8000/main')
       .then(res => res.json())
       .then(data => {
-        setCategoryList(data);
+        setCategoryList(data.side_info);
       });
   }, []);
 
+  const productList = type_id => {
+    const queryString = `products/categories?type_id=${type_id}`;
+    navigate(queryString);
+  };
+
   return (
     <div className="aside">
-      {categoryList.map(category => {
+      {categoryList?.map(category => {
         return (
-          <div className="asideCategory" key={category.id}>
-            <h2 className="categoryName">
-              <Link to={`${category.linkurl}`}>{category.name}</Link>
-            </h2>
+          <div className="asideCategory" key={category.category_id}>
+            <Link to={`/products/categories/${category.category_id}/types`}>
+              <h2 className="categoryName">{category.category_name}</h2>
+            </Link>{' '}
             <ul className="categoryTypes">
-              {category.types.map(types => {
+              {category.types?.map(types => {
                 return (
-                  <li className="categoryType" key={types.id}>
-                    <Link to={`category=${types.id}`} className="typeLink">
-                      {types.name}
-                    </Link>
+                  <li
+                    className="categoryType"
+                    onClick={() => {
+                      productList(types.type_id);
+                    }}
+                    key={types.type_id}
+                  >
+                    {types.type_name}
                   </li>
                 );
               })}

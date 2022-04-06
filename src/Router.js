@@ -8,20 +8,24 @@ import Womens from './pages/Womens/Womens';
 import Landing from './pages/Landing/Landing';
 import Labo from './pages/Labo/Labo';
 import Nav from './components/nav/Nav';
+import Aside from './components/aside/Aside';
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
-      <Routes>
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/mens" element={<Mens />} />
-        <Route path="/womens" element={<Womens />} />
-        <Route path="/labo" element={<Labo />} />
-        <Route path="/" element={<Landing />} />
-      </Routes>
+      <div className="mainContainer">
+        <Aside />
+        <Routes>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="products/categories" element={<List />} />
+          <Route path="products/categories/1/types" element={<Mens />} />
+          <Route path="products/categories/2/types" element={<Womens />} />
+          <Route path="products/categories/3/types" element={<Labo />} />
+          <Route path="/" element={<Landing />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };

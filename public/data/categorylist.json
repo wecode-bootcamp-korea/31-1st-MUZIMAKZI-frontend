@@ -1,32 +1,53 @@
-[
-  {
-    "id": 0,
-    "linkurl": "mens",
-    "name": "남성복",
-    "types": [
-      { "id": 0, "name": "남성 니트" },
-      { "id": 1, "name": "남성컷앤소" },
-      { "id": 2, "name": "남성 셔츠" },
-      { "id": 3, "name": "남성 아웃트탑" },
-      { "id": 4, "name": "남성 하의" }
-    ]
-  },
-  {
-    "id": 1,
-    "linkurl": "womens",
-    "name": "여성복",
-    "types": [
-      { "id": 0, "name": "여성 니트" },
-      { "id": 1, "name": "여성컷앤소" },
-      { "id": 2, "name": "여성 셔츠 • 원피스" },
-      { "id": 3, "name": "여성 아웃트탑" },
-      { "id": 4, "name": "여성 보텀" }
-    ]
-  },
-  {
-    "id": 2,
-    "linkurl": "labo",
-    "name": "MUZI MAKZI",
-    "types": [{ "id": 0, "name": "유니섹스 MAKZI" }]
-  }
-]
+{
+  "side": [
+    {
+      "category_id": 1,
+      "category_name": "남성복",
+      "types": [
+        {
+          "type_id": 1,
+          "type_name": "남성니트"
+        },
+        {
+          "type_id": 2,
+          "type_name": "남성셔츠"
+        },
+        {
+          "type_id": 3,
+          "type_name": "남성아웃트탑"
+        },
+        {
+          "type_id": 4,
+          "type_name": "남성하의"
+        }
+      ]
+    },
+    {
+      "category_id": 2,
+      "category_name": "여성복",
+      "types": [
+        {
+          "type_id": 5,
+          "type_name": "여성니트"
+        },
+        {
+          "type_id": 6,
+          "type_name": "여성 셔츠 원피스"
+        },
+        {
+          "type_id": 7,
+          "type_name": "여성 아웃트탑"
+        },
+        {
+          "type_id": 8,
+          "type_name": "여성 보텀"
+        }
+      ]
+    },
+    {
+      "category_id": 3,
+      "category_name": "MUJI LABO",
+      "types": []
+    }
+  ]
+}
