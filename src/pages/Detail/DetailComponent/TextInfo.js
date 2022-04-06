@@ -5,7 +5,7 @@ const TextInfo = ({ id, name, price, size, color, description, thumbnail }) => {
   return (
     <div className="textArea">
       <tr>
-        <th colspan="2">{name}</th>
+        <th colSpan="2">{name}</th>
       </tr>
       <tr>
         <td></td>

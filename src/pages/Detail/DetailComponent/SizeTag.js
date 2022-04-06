@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../DetailComponent/SizeTag.scss';
 const SizeTag = ({ id, thumbnail }) => {
+  const [data, setData] = useState();
   const [sizes, setSizes] = useState(null);
 
   const onHandleToggle = index => {
