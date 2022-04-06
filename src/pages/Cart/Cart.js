@@ -4,10 +4,23 @@ import './Cart.scss';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  let priceSum = 0;
+  let shippingFee = 3000;
+  // useEffect(() => {
+  //   fetch('data/CartData.json')
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       setCartItems(res);
+  //     });
+  // }, []);
 
   useEffect(() => {
-    fetch('data/CartData.json')
-      .then(res => res.json())
+    fetch('http://10.58.2.42:8000/carts', {
+      header: JSON.stringify({
+        user_id: 1,
+      }),
+    })
+      .then(response => response.json())
       .then(res => {
         setCartItems(res);
       });
@@ -53,9 +66,12 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody className="cartListBody">
-            {cartItems.map((cartItem, idx) => {
-              return <CartItemCell key={idx} cartItem={cartItem} />;
-            })}
+            {cartItems &&
+              cartItems.map((cartItem, idx) => {
+                priceSum += cartItem.price * cartItem.count;
+                shippingFee = priceSum > 30000 && 0;
+                return <CartItemCell key={idx} cartItem={cartItem} />;
+              })}
           </tbody>
         </table>
         <div className="cartCalc">
@@ -63,11 +79,11 @@ const Cart = () => {
             <div className="cartSumResult">
               <div className="cartProductTotal">
                 <span>상품금액 합계 : </span>
-                <span>원</span>
+                <span>{priceSum}원</span>
               </div>
               <div className="cartShippingFeeTotal">
-                <span>배송비 합계 : </span>
-                <span>원</span>
+                <span>배송비 합계 :</span>
+                <span>{shippingFee}원</span>
               </div>
             </div>
             <div className="devider" />
@@ -75,7 +91,10 @@ const Cart = () => {
               <div className="cartTotalPrice">
                 <span>총 결제 예정 금액 : </span>
                 <span>
-                  <span className="totalPriceText">0</span>원
+                  <span className="totalPriceText">
+                    {priceSum + shippingFee}
+                  </span>
+                  원
                 </span>
               </div>
             </div>
