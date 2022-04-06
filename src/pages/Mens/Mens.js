@@ -7,9 +7,11 @@ const Mens = () => {
   const [mensList, setMensList] = useState();
 
   useEffect(() => {
-    fetch('data/mensListData.json')
+    fetch('http://10.58.6.114:8000/products/categories/1/types')
       .then(res => res.json())
-      .then(res => setMensList(res))
+      .then(res => {
+        setMensList(res.message);
+      })
       .catch(e => console.error(e));
   }, []);
 
@@ -27,13 +29,13 @@ const Mens = () => {
           </div>
           <div className="smallImage">
             {mensList &&
-              mensList.map(({ id, name, thumbnail }) => {
+              mensList.map((img, index) => {
                 return (
                   <MensList
-                    key={id}
-                    id={id}
-                    name={name}
-                    thumbnail={thumbnail}
+                    key={index}
+                    id={img.id}
+                    name={img.name}
+                    thumbnail_url={img.thumbnail_url}
                   />
                 );
               })}

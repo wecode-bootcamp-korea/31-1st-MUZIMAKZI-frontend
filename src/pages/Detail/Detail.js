@@ -4,75 +4,91 @@ import DetailImage from './DetailComponent/DetailImages';
 import DetailSmallImage from './DetailComponent/DetailSmallImage';
 import TextInfo from './DetailComponent/TextInfo';
 import ColorImage from './DetailComponent/ColorImage';
-import SizeTag from './DetailComponent/SizeTag';
 import Button from './DetailComponent/Button';
+import SizeTag from './DetailComponent/SizeTag';
 
 const Detail = () => {
-  const [mainImage, setMainImage] = useState(
-    'http://image.mujikorea.net/goods/31/14/32/19/DAJ02A2S_COL_503_400.jpg'
-  );
-  const [sizeTags, setSizeTags] = useState([false, false, false, false, false]);
-  const [detailSmallImage, setDetailSmallImage] = useState();
-  const [textData, setTextData] = useState();
-  const [colorSelect, setColorSelect] = useState();
-  const [sizeSelect, setSizeSelect] = useState();
+  const [detailData, setDetailData] = useState({});
+
+  // useEffect(() => {
+  //   fetch('http://10.58.2.42:8000/products/detail/1')
+  //     .then(res => res.json())
+  //     // .then(res => setTextData(res))
+  //     .then(res => {
+  //       setDetailSmallImage(res.message.image);
+  //     })
+  //     .catch(e => console.error(e));
+  // }, []);
+  // console.log(colorSelect);
 
   useEffect(() => {
-    fetch('/data/detailSmallList.json')
-      .then(res => res.json())
-      .then(res => setDetailSmallImage(res))
-      .catch(e => console.error(e));
-  }, []);
-
-  useEffect(() => {
-    fetch('http://10.58.2.45:8000/products/detail/1')
+    fetch('http://10.58.2.42:8000/products/detail/1')
       .then(res => res.json())
       // .then(res => setTextData(res))
       .then(res => {
-        setTextData(res.message);
+        setDetailData(res.message);
       })
       .catch(e => console.error(e));
   }, []);
 
-  useEffect(() => {
-    fetch('/data/detailColorList.json')
-      .then(res => res.json())
-      .then(res => setColorSelect(res))
-      .catch(e => console.error(e));
-  }, []);
+  // console.log(mainImage);
+  // useEffect(() => {
+  //   fetch('/data/detailSmallList.json')
+  //     .then(res => res.json())
+  //     .then(res => setDetailSmallImage(res))
+  //     .catch(e => console.error(e));
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch('/data/detailColorList.json')
+  //     .then(res => res.json())
+  //     .then(res => setColorSelect(res))
+  //     .catch(e => console.error(e));
+  // }, []);
 
   useEffect(() => {
     fetch('/data/sizeTag.json')
       .then(res => res.json())
-      .then(res => setSizeSelect(res))
+      .then(res => setDetailData(res))
       .catch(e => console.error(e));
   }, []);
 
-  const onHandleRegisterImage = thumnail => {
-    setMainImage(thumnail);
+  const onHandleRegisterImage = thumbnail_url => {
+    setDetailData(thumbnail_url);
   };
 
-  const onHandleToggle = index => {
-    const newSizeTag = [false, false, false, false, false];
-    newSizeTag[index] = true;
-    setSizeTags(newSizeTag);
+  const onResetRegisterImage = () => {
+    setDetailData();
   };
+  const onColorChange = thumbnail_url => {
+    setDetailData(thumbnail_url);
+  };
+  // const onResetColor = () => {
+  //   setDetailData();
+  // };
+  // const onHandleToggle = index => {
+  //   const newSizeTag = [false, false, false, false, false];
+  //   newSizeTag[index] = true;
+  //   setDetailData(newSizeTag);
+  // };
 
   return (
     <div className="Detail">
       <div className="container">
         <span>남성복</span>
         <div id="imageContainer">
-          <DetailImage thumnail={mainImage} />
+          <DetailImage thumbnail_url={detailData.thumbnail_image_url} />
           <div id="smallImageList">
-            {detailSmallImage &&
-              detailSmallImage.map(small => {
+            {detailData.image &&
+              detailData.image.map((small, index) => {
                 return (
                   <DetailSmallImage
-                    key={small.id}
-                    registerImage={onHandleRegisterImage}
+                    key={index}
+                    registerImage={setDetailData}
+                    resetImage={setDetailData}
+                    detailData={detailData}
                     id={small.id}
-                    thumbnail={small.thumbnail}
+                    thumbnail_url={small}
                   />
                 );
               })}
@@ -80,18 +96,14 @@ const Detail = () => {
         </div>
         <div className="detailInform">
           <div className="textContainer">
-            <div id="titleName">
-              <p>판매가</p>
-              <p>배송비</p>
-            </div>
             <div className="textInfo">
-              {textData && (
+              {detailData && (
                 <TextInfo
-                  name={textData.name}
-                  price={textData.price}
-                  size={textData.size}
-                  color={textData.color}
-                  description={textData.description}
+                  name={detailData.name}
+                  price={detailData.price}
+                  size={detailData.size}
+                  color={detailData.color}
+                  description={detailData.description}
                 />
               )}
             </div>
@@ -106,30 +118,24 @@ const Detail = () => {
             <button className="rightBtn">옵션다시선택</button>
           </div>
           <div className="colorInfo">
-            {colorSelect &&
-              colorSelect.map(color => {
+            {detailData &&
+              detailData.map(color => {
                 return (
                   <ColorImage
                     key={color.id}
                     id={color.id}
-                    thumbnail={color.thumbnail}
+                    thumbnail={color.thumbnail_url}
+                    // registerColor={onColorChange}
+                    // resetColor={onResetColor}
                   />
                 );
               })}
           </div>
           <span>size선택</span>
           <div className="sizeInfo">
-            {sizeSelect &&
-              sizeSelect.map((size, index) => {
-                return (
-                  <SizeTag
-                    key={size.id}
-                    index={index}
-                    toggle={onHandleToggle}
-                    arr={sizeTags[index]}
-                    thumbnail={size.thumbnail}
-                  />
-                );
+            {detailData &&
+              detailData.map(size => {
+                return <SizeTag key={size.id} thumbnail={size.thumbnail} />;
               })}
           </div>
           <Button />

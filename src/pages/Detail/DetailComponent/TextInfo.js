@@ -8,7 +8,7 @@ const TextInfo = ({ id, name, price, size, color, description, thumbnail }) => {
         <th colspan="2">{name}</th>
       </tr>
       <tr>
-        <td>가격</td>
+        <td></td>
         <td>{price}</td>
       </tr>
       <tr>

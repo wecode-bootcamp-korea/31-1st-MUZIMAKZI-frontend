@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../DetailComponent/SizeTag.scss';
-const SizeTag = ({ id, arr, index, thumbnail, toggle }) => {
-  const toggleSize = () => {
-    toggle(index);
+const SizeTag = ({ id, thumbnail }) => {
+  const [sizes, setSizes] = useState(null);
+
+  const onHandleToggle = index => {
+    const newSize = [false, false, false, false, false];
+    newSize[index] = true;
+
+    setSizes(newSize);
   };
 
   return (
-    <button onClick={toggleSize}>
-      <img
-        styles={{
-          borderColor: arr ? 'red' : 'gray',
-        }}
-        id="sizeTag"
-        src={thumbnail}
-        alt=""
-      ></img>
-    </button>
+    <div>
+      <button>
+        <img id="sizeTag" src={thumbnail} alt=""></img>
+      </button>
+    </div>
   );
 };
 
