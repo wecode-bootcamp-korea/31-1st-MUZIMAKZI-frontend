@@ -3,6 +3,7 @@
 @mixin loginTab {
   .login {
     @include flexCenter;
+    background-color: white;
     width: 192px;
     height: 42px;
     border: 1px solid $muziLightGray;
@@ -29,7 +30,7 @@
 
   .signin {
     @include flexCenter;
-
+    background-color: white;
     width: 192px;
     height: 42px;
     border: 1px solid $muziLightGray;
@@ -38,18 +39,18 @@
 }
 
 .loginSignup {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 100vh;
-
+  z-index: 200;
   .modalBg {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.7);
     backdrop-filter: blur(5px);
-    z-index: 1000;
+    z-index: 200;
   }
 
   .container {
@@ -59,7 +60,7 @@
     padding-bottom: 32px;
     width: 464px;
     background-color: #fff;
-    z-index: 10000;
+    z-index: 10000000000000;
 
     .signHeader {
       position: relative;

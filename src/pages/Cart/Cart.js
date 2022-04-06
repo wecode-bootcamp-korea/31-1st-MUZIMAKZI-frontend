@@ -8,17 +8,17 @@ const Cart = () => {
   let shippingFee = 3000;
 
   useEffect(() => {
-    fetch('http://10.58.2.42:8000/carts/1', {
-      header: JSON.stringify({
-        user_id: 1,
-      }),
+    fetch('http://10.58.2.42:8000/carts', {
+      headers: {
+        Authorization: localStorage.getItem('TOKEN'),
+      },
     })
       .then(response => response.json())
       .then(data => {
-        setCartItems(data.message);
+        data.message === 'NO ITEM IN CART' || setCartItems(data.message);
       });
   }, []);
-
+  console.log(cartItems);
   return (
     <div className="cart">
       <div className="pageContainer">
@@ -29,23 +29,16 @@ const Cart = () => {
           <div className="customerInfo">
             <strong>고객</strong>님의 혜택정보
           </div>
-          <div className="customerBenefit">
-            {localStorage.length ? '로그인' : '로그아웃'}
-          </div>
+          <div className="customerBenefit">쿠폰: 0 point: 0</div>
         </div>
         <div className="orderGuide">
-          {localStorage ? (
-            <LoginUserNotification />
-          ) : (
-            <LogOutUserNotification />
-          )}
+          <LogInUserNotification />
         </div>
         <table className="cartList">
           <thead>
             <tr>
               <th scope="col" width="110">
-                <input type="checkbox" className="chkBox" />
-                전체선택
+                상품 이미지
               </th>
               <th scope="col" width="250">
                 상품정보
@@ -56,7 +49,7 @@ const Cart = () => {
               <th scope="col" width="70">
                 수량
               </th>
-              <th scope="col" width="120">
+              <th scope="col" width="100">
                 소계
               </th>
               <th scope="col">주문 / 저장</th>
@@ -128,15 +121,7 @@ const EmptyCart = () => {
   );
 };
 
-const LoginUserNotification = () => {
-  return (
-    <p>
-      고객님! 현재 비로그인 상태입니다. 상품을 보관하시려면 [로그인]을 해주세요.
-    </p>
-  );
-};
-
-const LogOutUserNotification = () => {
+const LogInUserNotification = () => {
   return (
     <p>
       고객님! 장바구니상품은 30일간 보관됩니다. 상품을 장기간 보관하시려면

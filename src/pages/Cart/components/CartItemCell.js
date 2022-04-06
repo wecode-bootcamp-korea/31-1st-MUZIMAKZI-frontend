@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './CartItemCell.scss';
 const CartItemCell = ({
-  cartItem: { name, size, color, price, thumbnail_url, quantity },
+  cartItem: { name, size, color, price, thumbnail_url, quantity, cart_id },
 }) => {
   const [itemCount, setItemCount] = useState(quantity);
-
+  console.log(cart_id);
   const sum = price * quantity;
 
   const handleCount = e => {
@@ -16,13 +16,25 @@ const CartItemCell = ({
     alert('수량을 변경하시겠습니까?');
     alert('변경되었습니다.');
   };
-
+  console.log(localStorage.getItem('TOKEN'));
+  const deleteItem = () => {
+    fetch('http://10.58.2.42:8000/carts', {
+      method: 'DELETE',
+      headers: {
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+      body: {
+        cart_id: cart_id,
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.message);
+      });
+  };
   return (
     <tr className="CartItemCell">
       <td className="prdImg">
-        <span>
-          <input type="checkbox" />
-        </span>
         <img src={`${thumbnail_url}`} alt="cartImg" />
       </td>
       <td className="prdInfo">
@@ -59,7 +71,13 @@ const CartItemCell = ({
             <button>바로주문</button>
           </li>
           <li>
-            <button>삭제</button>
+            <button
+              onClick={() => {
+                deleteItem();
+              }}
+            >
+              삭제
+            </button>
           </li>
         </ul>
       </td>

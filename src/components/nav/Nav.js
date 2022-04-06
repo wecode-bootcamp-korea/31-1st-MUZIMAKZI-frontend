@@ -43,11 +43,13 @@ const Nav = () => {
           </div>
           <div className="linkItem">
             {isLogin ? (
-              <button
-                type="button"
-                className="btnLogout"
-                onClick={handleLogout}
-              />
+              <Link to="/">
+                <button
+                  type="button"
+                  className="btnLogout"
+                  onClick={handleLogout}
+                />
+              </Link>
             ) : (
               <button
                 type="button"
@@ -59,9 +61,19 @@ const Nav = () => {
             <Link to="/">
               <button type="button" className="btnMypage" />
             </Link>
-            <Link to="/cart">
-              <button type="button" className="btnCart" />
-            </Link>
+            {localStorage.length ? (
+              <Link to="/cart">
+                <button type="button" className="btnCart" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  alert('먼저 로그인 해주세요');
+                }}
+                type="button"
+                className="btnCart"
+              />
+            )}
           </div>
         </div>
         <div className="navBottom">
