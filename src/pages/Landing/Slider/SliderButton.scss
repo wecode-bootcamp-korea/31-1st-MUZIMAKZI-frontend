@@ -1,0 +1,28 @@
+@import '../../../styles/variables.scss';
+
+@mixin btn {
+  z-index: 100;
+  width: 55px;
+  height: 55px;
+  opacity: 0.7;
+  background-size: 25px;
+  background-color: lightgray;
+}
+
+.btnPrev {
+  position: absolute;
+  left: 0%;
+  top: 45%;
+  background: url('../../../../public/images/landingpage/leftnext.png')
+    no-repeat center;
+  @include btn;
+}
+
+.btnNext {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  background: url('../../../../public/images/landingpage/rightnext.png')
+    no-repeat center;
+  @include btn;
+}
