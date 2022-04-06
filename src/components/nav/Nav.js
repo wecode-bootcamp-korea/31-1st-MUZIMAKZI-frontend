@@ -59,7 +59,7 @@ const Nav = () => {
             <Link to="/">
               <button type="button" className="btnMypage" />
             </Link>
-            <Link to="/">
+            <Link to="/cart">
               <button type="button" className="btnCart" />
             </Link>
           </div>

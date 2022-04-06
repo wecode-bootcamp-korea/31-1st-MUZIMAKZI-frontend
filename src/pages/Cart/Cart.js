@@ -6,13 +6,6 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState();
   let priceSum = 0;
   let shippingFee = 3000;
-  // useEffect(() => {
-  //   fetch('data/CartData.json')
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       setCartItems(res);
-  //     });
-  // }, []);
 
   useEffect(() => {
     fetch('http://10.58.2.42:8000/carts/1', {
@@ -25,7 +18,7 @@ const Cart = () => {
         setCartItems(data.message);
       });
   }, []);
-  console.log(cartItems);
+
   return (
     <div className="cart">
       <div className="pageContainer">
@@ -37,11 +30,15 @@ const Cart = () => {
             <strong>고객</strong>님의 혜택정보
           </div>
           <div className="customerBenefit">
-            로그인 후, 포인트 & 쿠폰을 확인하실 수 있습니다.
+            {localStorage.length ? '로그인' : '로그아웃'}
           </div>
         </div>
         <div className="orderGuide">
-          <LoginUserNotification />
+          {localStorage ? (
+            <LoginUserNotification />
+          ) : (
+            <LogOutUserNotification />
+          )}
         </div>
         <table className="cartList">
           <thead>
@@ -66,12 +63,15 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody className="cartListBody">
-            {cartItems &&
+            {cartItems ? (
               cartItems.map((cartItem, idx) => {
                 priceSum += cartItem.price * cartItem.quantity;
                 shippingFee = priceSum > 30000 && 0;
                 return <CartItemCell key={idx} cartItem={cartItem} />;
-              })}
+              })
+            ) : (
+              <EmptyCart />
+            )}
           </tbody>
         </table>
         <div className="cartCalc">
