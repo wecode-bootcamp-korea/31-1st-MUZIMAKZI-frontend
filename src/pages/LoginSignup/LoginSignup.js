@@ -30,8 +30,9 @@ const LoginSignup = ({ handleLoginModal }) => {
     handleLoginModal();
   };
 
-  const signInCommunication = ({ signInInput: { email, password } }) => {
-    fetch('http://10.58.2.45:8000/users/signin', {
+  const signInCommunication = signInput => {
+    const { email, password } = signInput;
+    fetch('http://10.58.2.42:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -46,10 +47,9 @@ const LoginSignup = ({ handleLoginModal }) => {
       });
   };
 
-  const signUpCommunication = ({
-    signUpInput: { firstName, lastName, email, password, phoneNumber },
-  }) => {
-    fetch('http://10.58.2.45:8000/users/signup', {
+  const signUpCommunication = signInput => {
+    const { firstName, lastName, email, password, phoneNumber } = signInput;
+    fetch('http://10.58.2.42:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         first_name: firstName,
@@ -132,7 +132,6 @@ const LoginSignup = ({ handleLoginModal }) => {
             title="로그인"
             inputData={SIGNIN_DATA}
             signInput={signInInput}
-            setSignInInput={setSignInInput}
             handleInput={handleSignInInput}
             signCommunication={signInCommunication}
           />
@@ -143,7 +142,6 @@ const LoginSignup = ({ handleLoginModal }) => {
             isLogin={isLogin}
             inputData={SIGNUP_DATA}
             signInput={signUpInput}
-            setSignInInput={setSignUpInput}
             handleInput={handleSignUpInput}
             signCommunication={signUpCommunication}
           />
