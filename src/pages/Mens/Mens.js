@@ -7,7 +7,7 @@ const Mens = () => {
   const [mensList, setMensList] = useState();
 
   useEffect(() => {
-    fetch('data/mensListData.json')
+    fetch(fetch('/data/mensListData.json'))
       .then(res => res.json())
       .then(res => setMensList(res))
       .catch(e => console.error(e));
