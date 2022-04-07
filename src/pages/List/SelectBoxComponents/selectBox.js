@@ -15,7 +15,7 @@ const SelectBox = () => {
       <ul className="selectBtnGroup">
         <li className="imageBtn" />
         <li className="imageListBtn" />
-        <li className="more">50</li>
+        <li className="more">60</li>
       </ul>
     </div>
   );

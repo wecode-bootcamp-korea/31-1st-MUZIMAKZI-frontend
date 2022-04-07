@@ -28,7 +28,7 @@ const List = () => {
         <h4>남성니트</h4>
         <nav className="nextPage">
           <p className="textArea">
-            총 <b>131개</b>의 상품이 있습니다.
+            총 <b>60개</b>의 상품이 있습니다.
           </p>
           <ul>
             <li className="btnPageL">
