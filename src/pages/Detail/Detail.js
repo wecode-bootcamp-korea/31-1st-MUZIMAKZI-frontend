@@ -9,16 +9,15 @@ import SizeTag from './DetailComponent/SizeTag';
 
 const Detail = () => {
   const [detailData, setDetailData] = useState();
-  const [sizeData, setSizeData] = useState();
   const [colorData, setColorData] = useState();
   const [sizeSelectArr, setSizeSelectArr] = useState();
   useEffect(() => {
-    fetch('http://10.58.5.20:8000/products/detail/1')
+    fetch('http://10.58.5.20:8000/products/1')
       .then(res => res.json())
       .then(res => {
         setDetailData(res.message);
       })
-      .catch(e => console.error(e));
+      .catch(e => console.log(e.message));
   }, []);
 
   useEffect(() => {
@@ -35,12 +34,6 @@ const Detail = () => {
   //     .then(res => setDetailSmallImage(res))
   //     .catch(e => console.error(e));
   // }, []);
-  useEffect(() => {
-    fetch('/data/sizeTag.json')
-      .then(res => res.json())
-      .then(res => setSizeData(res))
-      .catch(e => console.error(e));
-  }, []);
 
   const onHandleRegisterImage = thumbnail_url => {
     setDetailData(thumbnail_url);
@@ -112,9 +105,9 @@ const Detail = () => {
           </div>
           <span>size선택</span>
           <div className="sizeInfo">
-            {sizeData &&
-              sizeData.map(size => {
-                return <SizeTag key={size.id} thumbnail={size.thumbnail} />;
+            {detailData &&
+              detailData.size.map(size => {
+                return <SizeTag key={size.id} size={size} />;
               })}
           </div>
           <Button />

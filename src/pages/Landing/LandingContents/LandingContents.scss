@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.firstContent {
+  margin: 20px 10px;
+  border: 1px solid lightgray;
+
+  img {
+    width: 230px;
+    height: 150px;
+  }
+  .contentValue {
+    padding: 25px 30px;
+    height: 65px;
+  }
+}

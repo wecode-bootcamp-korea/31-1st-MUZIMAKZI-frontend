@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import '../DetailComponent/SizeTag.scss';
-const SizeTag = ({ id, thumbnail }) => {
+const SizeTag = ({ id, size }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleSelect = () => {
+    setIsSelected(!isSelected);
+  };
   return (
     <div>
-      <button>
-        <img id="sizeTag" src={thumbnail} alt=""></img>
+      <button
+        onClick={handleSelect}
+        className={`sizeSelect ${isSelected && 'selected'}`}
+      >
+        {size}
       </button>
     </div>
   );
