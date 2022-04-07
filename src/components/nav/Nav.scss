@@ -1,0 +1,98 @@
+@import '../../styles/variables.scss';
+
+.nav {
+  @include flexCenter;
+  justify-items: center;
+
+  .navTop {
+    @include flexBetween;
+    width: 1060px;
+    padding: 20px 0;
+    margin: auto;
+
+    .Logo {
+      @include flexCenter;
+
+      .muziLogo {
+        font-size: 50px;
+        font-weight: 900;
+      }
+
+      .SideLogoImg {
+        width: 60px;
+        height: 20px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+      }
+    }
+
+    .navSearch {
+      display: flex;
+      position: relative;
+      padding: 7px 20px;
+      border: 2px solid darkgray;
+      border-radius: 5px;
+
+      input {
+        width: 530px;
+        border: none;
+      }
+
+      img {
+        position: absolute;
+        right: 7px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .btnLogin {
+      background: url('/assets/login.png') no-repeat center;
+      background-size: 23px;
+    }
+
+    .btnLogout {
+      background: url('/assets/exit.png') no-repeat center;
+      background-size: 23px;
+    }
+
+    .btnMypage {
+      background: url('/assets/user.png') no-repeat center;
+      background-size: 25px;
+    }
+
+    .btnCart {
+      background: url('/assets/shopping-bag.png') no-repeat center;
+      background-size: 24px;
+    }
+
+    button {
+      padding: 20px;
+    }
+
+    button {
+      margin-right: 15px;
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  font-weight: bold;
+  padding-top: 20px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+
+  li {
+    position: relative;
+    height: 45px;
+    margin: 0 20px;
+
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+  }
+}

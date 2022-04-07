@@ -1,0 +1,56 @@
+{
+  "landings": [
+    {
+      "id": 1,
+      "landing_image_url": "../images/landingpage/검정옷.jpg"
+    },
+    {
+      "id": 2,
+      "landing_image_url": "../images/landingpage/붉은꽃.jpg"
+    },
+    {
+      "id": 3,
+      "landing_image_url": "../images/landingpage/흰침대.jpg"
+    },
+    {
+      "id": 4,
+      "landing_image_url": "../images/landingpage/흰물품들.jpg"
+    },
+    {
+      "id": 5,
+      "landing_image_url": "../images/landingpage/흰문.jpg"
+    }
+  ],
+  "promotes": [
+    {
+      "id": 1,
+      "promote_image_url": "../images/landingpage/무지호텔.jpg",
+      "promote_name": "무지호텔, 새로운 도전"
+    },
+    {
+      "id": 2,
+      "promote_image_url": "../images/landingpage/접어둔여러색옷.jpg",
+      "promote_name": "반팔티셔츠 시리즈"
+    },
+    {
+      "id": 3,
+      "promote_image_url": "../images/landingpage/흰구름.jpg",
+      "promote_name": "구름같은 솜사탕 한정판매"
+    },
+    {
+      "id": 4,
+      "promote_image_url": "../images/landingpage/흰옷걸이.jpg",
+      "promote_name": "옷걸이 기획전"
+    },
+    {
+      "id": 5,
+      "promote_image_url": "../images/landingpage/흰조명.jpg",
+      "promote_name": "무지의 미, 흰조명"
+    },
+    {
+      "id": 6,
+      "promote_image_url": "../images/landingpage/무지책.jpg",
+      "promote_name": "무지가 나타내는 삶의 양식"
+    }
+  ]
+}
