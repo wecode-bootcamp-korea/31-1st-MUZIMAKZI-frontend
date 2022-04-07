@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ItemList from './ItemListComponents/ItemList';
 import SelectBox from './SelectBoxComponents/SelectBox';
 import './List.scss';
@@ -9,7 +9,7 @@ const List = () => {
 
   const location = useLocation();
 
-  const test = location.search.split('?')[1].charAt(8);
+  const womensList = location.search.split('?')[1].charAt(8);
   const API_URL = `http://10.58.5.51:8000/products/categories${location.search}`;
 
   const getFetch = () => {
@@ -27,7 +27,7 @@ const List = () => {
   return (
     <div className="list">
       <div className="pageContainer">
-        {test < 5 ? <h4>남성니트</h4> : <h4>여성니트</h4>}
+        {womensList < 5 ? <h4>남성니트</h4> : <h4>여성니트</h4>}
         <nav className="nextPage">
           <p className="textArea">
             총 <b>20개</b>의 상품이 있습니다.
