@@ -1,6 +1,6 @@
 import React from 'react';
 import SelectText from '../SelectTextComponents/SelectText';
-import './SelectBox.scss';
+import './Select.scss';
 
 const SelectBox = () => {
   return (

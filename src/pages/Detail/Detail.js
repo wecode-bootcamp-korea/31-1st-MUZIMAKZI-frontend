@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Detail.scss';
+import { useParams } from 'react-router-dom';
 import DetailImage from './DetailComponent/DetailImages';
 import DetailSmallImage from './DetailComponent/DetailSmallImage';
 import TextInfo from './DetailComponent/TextInfo';
@@ -7,51 +7,31 @@ import ColorImage from './DetailComponent/ColorImage';
 import Button from './DetailComponent/Button';
 import SizeTag from './DetailComponent/SizeTag';
 
+import './Detail.scss';
+
 const Detail = () => {
   const [detailData, setDetailData] = useState();
-  const [colorData, setColorData] = useState();
-  const [sizeSelectArr, setSizeSelectArr] = useState();
+
+  const [colorSelect, setColorSelect] = useState([]);
+  const [sizeSelect, setSizeSelect] = useState([]);
+
+  const [colorSelectId, setColorSelectId] = useState([]);
+  const [sizeSelectId, setSizeSelectId] = useState([]);
+
+  const params = useParams();
+  console.log(detailData);
   useEffect(() => {
-    fetch('http://10.58.5.20:8000/products/1')
+    fetch(`http://10.58.5.51:8000/products/${params.id}`)
       .then(res => res.json())
       .then(res => {
         setDetailData(res.message);
       })
-      .catch(e => console.log(e.message));
+      .catch(e => alert(e.message));
   }, []);
-
-  useEffect(() => {
-    fetch('/data/detailColorList.json')
-      .then(res => res.json())
-      .then(res => setColorData(res))
-      .catch(e => console.error(e));
-  }, []);
-
-  // console.log(mainImage);
-  // useEffect(() => {
-  //   fetch('/data/detailSmallList.json')
-  //     .then(res => res.json())
-  //     .then(res => setDetailSmallImage(res))
-  //     .catch(e => console.error(e));
-  // }, []);
-
-  const onHandleRegisterImage = thumbnail_url => {
-    setDetailData(thumbnail_url);
-  };
-
-  const onResetRegisterImage = () => {
-    setDetailData();
-  };
-  const onColorChange = thumbnail_url => {
-    setDetailData(thumbnail_url);
-  };
-  const onResetColor = () => {
-    setDetailData();
-  };
 
   return (
     <div className="Detail">
-      <div className="container">
+      <div className="detailContainer">
         <div id="imageContainer">
           {detailData && (
             <DetailImage thumbnail_url={detailData.thumbnail_image_url} />
@@ -86,19 +66,22 @@ const Detail = () => {
               )}
             </div>
           </div>
-          <div className="textDetailBox"></div>
+
           <div className="sizeBtn">
             <span>Color선택</span>
-            <button className="rightBtn">옵션다시선택</button>
           </div>
           <div className="colorInfo">
-            {colorData &&
-              colorData.map(color => {
+            {detailData &&
+              detailData.color.map((color, idx) => {
                 return (
                   <ColorImage
-                    key={color.id}
-                    id={color.id}
-                    thumbnail={color.thumbnail}
+                    id={idx}
+                    key={idx}
+                    color={color}
+                    colorId={detailData.color_id}
+                    setColorSelectId={setColorSelectId}
+                    setColorSelect={setColorSelect}
+                    colorSelect={colorSelect}
                   />
                 );
               })}
@@ -106,11 +89,21 @@ const Detail = () => {
           <span>size선택</span>
           <div className="sizeInfo">
             {detailData &&
-              detailData.size.map(size => {
-                return <SizeTag key={size.id} size={size} />;
+              detailData.size.map((size, idx) => {
+                return (
+                  <SizeTag
+                    id={idx}
+                    key={idx}
+                    size={size}
+                    size_id={detailData.size_id}
+                    setSizeSelect={setSizeSelect}
+                    setSizeSelectId={setSizeSelectId}
+                    sizeSelect={sizeSelect}
+                  />
+                );
               })}
           </div>
-          <Button />
+          <Button colorSelectId={colorSelectId} sizeSelectId={sizeSelectId} />
         </div>
       </div>
     </div>

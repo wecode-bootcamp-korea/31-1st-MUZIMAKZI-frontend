@@ -3,18 +3,17 @@ import '../DetailComponent/TextInfo.scss';
 
 const TextInfo = ({ id, name, price, size, color, description, thumbnail }) => {
   return (
-    <div className="textArea">
-      <tr>
-        <th colSpan="2">{name}</th>
-      </tr>
-      <tr>
-        <td></td>
-        <td>{price}</td>
-      </tr>
-      <tr>
-        <td>{description}</td>
-      </tr>
-    </div>
+    <ul className="textArea">
+      <li className="detailTitle">
+        <p>{name}</p>
+      </li>
+      <li className="detailPrice">
+        <p>{parseInt(price)}</p>
+      </li>
+      <li>
+        <p>{description}</p>
+      </li>
+    </ul>
   );
 };
 

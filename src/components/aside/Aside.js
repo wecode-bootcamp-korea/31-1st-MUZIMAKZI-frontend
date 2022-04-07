@@ -7,12 +7,11 @@ const Aside = () => {
   const [categoryList, setCategoryList] = useState([]);
   const navigate = useNavigate();
 
-  console.log(categoryList);
   useEffect(() => {
-    fetch('/data/categorylist.json')
+    fetch('http://10.58.5.51:8000/main')
       .then(res => res.json())
       .then(data => {
-        setCategoryList(data.side);
+        setCategoryList(data.side_info);
       });
   }, []);
 
@@ -20,6 +19,8 @@ const Aside = () => {
     const queryString = `products/categories?type_id=${typeId}`;
     navigate(queryString);
   };
+
+  console.log(categoryList);
 
   return (
     <div className="aside">

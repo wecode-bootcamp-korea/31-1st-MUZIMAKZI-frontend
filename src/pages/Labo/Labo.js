@@ -32,7 +32,7 @@ const Labo = () => {
           </div>
         </div>
         <div className="viewProductBox">
-          <Link to="/products/categories" className="viewProductBtn">
+          <Link to="/products/categories?type_id=1" className="viewProductBtn">
             MUZI MAKZI 상품 보러가기
           </Link>
         </div>

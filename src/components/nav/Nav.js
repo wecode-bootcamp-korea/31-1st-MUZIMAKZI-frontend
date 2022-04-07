@@ -80,7 +80,7 @@ const Nav = () => {
             ) : (
               <button
                 onClick={() => {
-                  alert('먼저 로그인 해주세요');
+                  alert('로그인을 진행 해주세요.');
                 }}
                 type="button"
                 className="btnCart"

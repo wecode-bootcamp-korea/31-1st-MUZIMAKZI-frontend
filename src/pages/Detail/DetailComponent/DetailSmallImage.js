@@ -11,6 +11,7 @@ const DetailSmallImage = ({
     const { name, value } = e.target;
     registerImage(detailData => ({ ...detailData, [name]: value }));
   };
+
   const mainThumbnail = e => {
     const { name } = e.target;
     resetImage(detailData => ({
@@ -19,10 +20,7 @@ const DetailSmallImage = ({
     }));
   };
 
-  console.log(detailData);
-
-  const originURL =
-    'http://image.mujikorea.net/goods/31/13/74/25/AAC07A0A_COL_525_130.jpg';
+  const originURL = { thumbnail_url };
   const thumnail = 'thumbnail_image_url';
 
   return (
@@ -30,7 +28,7 @@ const DetailSmallImage = ({
       <button
         name={thumnail}
         onMouseEnter={submitThumnail}
-        onMouseLeave={mainThumbnail}
+        // onMouseLeave={mainThumbnail}
         value={thumbnail_url}
       >
         <img className="detailSmallList" src={thumbnail_url} alt="smallImg" />

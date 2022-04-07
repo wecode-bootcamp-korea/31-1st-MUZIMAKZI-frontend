@@ -47,8 +47,8 @@ const Slider = ({ swiperList }) => {
             }}
           >
             {swiperList &&
-              swiperList.map(swiperImg => {
-                return <SwiperData key={swiperImg.id} {...swiperImg} />;
+              swiperList.map((swiperImg, idx) => {
+                return <SwiperData key={idx} {...swiperImg} />;
               })}
           </div>
         </div>

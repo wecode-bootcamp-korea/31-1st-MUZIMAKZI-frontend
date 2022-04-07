@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ItemList from './ItemListComponents/ItemList';
-import SelectBox from './SelectBoxComponents/SelectBox';
+import Select from './SelectBoxComponents/Select';
 import './List.scss';
 
 const List = () => {
@@ -50,11 +50,11 @@ const List = () => {
             </li>
           </ul>
         </nav>
-        <SelectBox />
+        <Select />
         <ul className="product">
           {products &&
             products.map((product, idx) => (
-              <ItemList key={product.id} {...product} idx={idx} />
+              <ItemList key={idx} {...product} idx={idx} />
             ))}
         </ul>
       </div>
