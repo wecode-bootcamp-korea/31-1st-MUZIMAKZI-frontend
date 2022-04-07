@@ -38,7 +38,8 @@
   }
   .colorInfo {
     display: flex;
-    width: 200px;
+    flex-direction: column;
+    margin: 10px 0;
   }
   .price {
     font-size: 20px;
