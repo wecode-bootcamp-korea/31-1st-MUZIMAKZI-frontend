@@ -30,13 +30,7 @@ const Mens = () => {
           <div className="smallImage">
             {mensList &&
               mensList.map(({ id, name, thumbnail }) => {
-                return (
-                  <MensList
-                    key={id}
-                    name={name}
-                    thumbnail={thumbnail}
-                  />
-                );
+                return <MensList key={id} name={name} thumbnail={thumbnail} />;
               })}
           </div>
         </div>
