@@ -6,6 +6,7 @@
   outline: none;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 .conatainer {
   max-width: 900px;
   width: 100%;
@@ -15,11 +16,10 @@
   justify-content: space-around;
 }
 
-// 볼드
 .bold {
   font-weight: 700;
 }
-// float 속성 해제
+
 .clear:after {
   content: '';
   display: block;

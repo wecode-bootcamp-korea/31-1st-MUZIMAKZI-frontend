@@ -1,12 +1,11 @@
 @import '../../styles/variables.scss';
 
 .labo {
-  width: 100%;
+  padding-bottom: 20px;
   text-align: center;
 
-  .container {
+  .pageContainer {
     position: relative;
-    @include defaultWidth;
 
     img {
       width: 760px;
@@ -20,7 +19,7 @@
       .laboTitle {
         position: absolute;
         top: 860px;
-        left: 200px;
+        left: 50px;
         font-size: 70px;
         font-weight: 400;
       }
@@ -31,12 +30,12 @@
         margin-bottom: 100px;
 
         .laboText {
-          margin: 65px 0 0 200px;
+          margin: 65px 0 0 55px;
           @include font(14px);
         }
 
         .laboSize {
-          margin: 65px 200px 0 0;
+          margin: 65px 55px 0 0;
           @include font(12px);
         }
       }
