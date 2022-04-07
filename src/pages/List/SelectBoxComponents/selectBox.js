@@ -2,6 +2,7 @@ import React from 'react';
 import SelectText from '../SelectTextComponents/SelectText';
 import './SelectBox.scss';
 
+console.log('dd');
 const SelectBox = () => {
   return (
     <div className="selectBox">

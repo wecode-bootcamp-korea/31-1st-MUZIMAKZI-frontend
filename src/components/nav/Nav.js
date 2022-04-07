@@ -40,7 +40,7 @@ const Nav = () => {
           <Link to="/" className="Logo">
             <span className="muziLogo">MUZI</span>
             <img
-              src="images/nav/MUZISIDE.png"
+              src="/images/nav/MUZISIDE.png"
               alt="SideLogo"
               className="SideLogoImg"
             />

@@ -7,6 +7,7 @@ const Aside = () => {
   const [categoryList, setCategoryList] = useState([]);
   const navigate = useNavigate();
 
+  console.log(categoryList);
   useEffect(() => {
     fetch('/data/categorylist.json')
       .then(res => res.json())
