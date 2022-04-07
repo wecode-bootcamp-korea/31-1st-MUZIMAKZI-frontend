@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .list {
-  @include defaultWidth;
+  margin: 0 auto;
 
   .pageContainer {
     h4 {

@@ -8,12 +8,6 @@ const List = () => {
   const [products, setProducts] = useState([]);
   const location = useLocation();
 
-  useEffect(() => {
-    fetch('/data/MockData.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
-  }, []);
-
   const API_URL = `http://10.58.1.246:8000/products/categories${location.search}`;
 
   const getFetch = () => {
