@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MensList = ({ id, name, thumbnail_url }) => {
+const MensList = ({ name, thumbnail }) => {
   return (
     <div className="smallList">
-      <p>{name}</p> <img className="tShirt" src={thumbnail_url} alt="tShirt" />
+      <p>{name}</p> <img className="tShirt" src={thumbnail} alt="tShirt" />
     </div>
   );
 };

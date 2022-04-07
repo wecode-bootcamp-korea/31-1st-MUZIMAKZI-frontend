@@ -68,8 +68,6 @@ button {
   vertical-align: middle;
 }
 button {
-  border: 0 none;
-  background-color: transparent;
   cursor: pointer;
 }
 body {
@@ -83,9 +81,8 @@ select,
 textarea,
 button {
   font-size: 14px;
-  line-height: 1.5;
-  font-family: 'Noto Sans KR', 'Malgun Gothic', '돋움', dotum, sans-serif;
-  color: #333;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 a {
   color: #333;
@@ -110,4 +107,8 @@ legend {
   font-size: 0;
   line-height: 0;
   height: 0;
+}
+table {
+  width: 100%; /*border-collapse:collapse;*/
+  border-spacing: 0;
 }

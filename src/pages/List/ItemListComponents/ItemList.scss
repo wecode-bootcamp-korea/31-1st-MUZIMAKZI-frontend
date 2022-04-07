@@ -1,0 +1,85 @@
+@import '../../../styles/variables.scss';
+
+.itemList {
+  height: 400px;
+  margin-right: 27.5px;
+
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
+
+  .listImg {
+    width: 130px;
+    height: 130px;
+  }
+
+  .listIcons {
+    .itemListImg {
+      margin-right: 5px;
+    }
+  }
+
+  .listText {
+    width: 130px;
+    margin-top: 16px;
+    font-size: 13px;
+    word-wrap: break-word;
+  }
+
+  .listPrice {
+    padding: 30px 0 0 79px;
+    font-size: 12px;
+  }
+
+  .tagTop {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 5px 3px 2px;
+    letter-spacing: -0.5px;
+
+    .sale {
+      width: 30px;
+      margin: 0 4px 1px 0;
+      background: $muziRed;
+      color: #fff;
+      font-size: 11px;
+      @include borderBox($muziRed);
+    }
+
+    .onlineSize {
+      width: 86px;
+      margin-bottom: 1px;
+      background: #fff;
+      color: $muziRed;
+      font-size: 11px;
+      @include borderBox($muziRed);
+    }
+  }
+
+  .tagBottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 5px 3px 2px;
+    letter-spacing: -0.5px;
+
+    .freeShipping {
+      width: 46px;
+      margin-right: 4px;
+      background: #fff;
+      color: $muziRed;
+      font-size: 11px;
+      @include borderBox($muziRed);
+    }
+
+    .soldOut {
+      width: 27px;
+      background: #fff;
+      color: $muziRed;
+      background: #fff;
+      font-size: 11px;
+      @include borderBox($muziRed);
+    }
+  }
+}
