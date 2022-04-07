@@ -31,7 +31,7 @@ const Detail = () => {
 
   return (
     <div className="Detail">
-      <div className="container">
+      <div className="detailContainer">
         <div id="imageContainer">
           {detailData && (
             <DetailImage thumbnail_url={detailData.thumbnail_image_url} />
