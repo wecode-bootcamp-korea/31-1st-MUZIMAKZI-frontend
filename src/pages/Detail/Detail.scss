@@ -20,7 +20,7 @@
     .textContainer {
       display: flex;
       justify-content: space-between;
-      width: 50%;
+      width: 80%;
       #titleName {
         margin-top: 5px;
       }
@@ -50,7 +50,7 @@
   }
   .textArea {
     color: #333;
-    width: 100%;
+    width: 80%;
     font-size: 13px;
     line-height: 16px;
     border-top: 1px dotted #e1e1e1;
@@ -60,7 +60,7 @@
   }
   .sizeInfo {
     display: flex;
-    height: 40px;
+    height: 50px;
   }
   .button {
     display: flex;
@@ -74,7 +74,7 @@
     display: flex;
     justify-content: space-between;
     height: 40px;
-    width: 100%;
+    width: 70%;
   }
   #wishBtn {
     border: 1px solid rgba(153, 153, 153, 0.7);

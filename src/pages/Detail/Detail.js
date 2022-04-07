@@ -11,12 +11,20 @@ const Detail = () => {
   const [detailData, setDetailData] = useState();
   const [sizeData, setSizeData] = useState();
   const [colorData, setColorData] = useState();
+  const [sizeSelectArr, setSizeSelectArr] = useState();
   useEffect(() => {
-    fetch('http://10.58.2.42:8000/products/detail/1')
+    fetch('http://10.58.5.20:8000/products/detail/1')
       .then(res => res.json())
       .then(res => {
         setDetailData(res.message);
       })
+      .catch(e => console.error(e));
+  }, []);
+
+  useEffect(() => {
+    fetch('/data/detailColorList.json')
+      .then(res => res.json())
+      .then(res => setColorData(res))
       .catch(e => console.error(e));
   }, []);
 
@@ -27,14 +35,6 @@ const Detail = () => {
   //     .then(res => setDetailSmallImage(res))
   //     .catch(e => console.error(e));
   // }, []);
-
-  useEffect(() => {
-    fetch('/data/detailColorList.json')
-      .then(res => res.json())
-      .then(res => setColorData(res))
-      .catch(e => console.error(e));
-  }, []);
-
   useEffect(() => {
     fetch('/data/sizeTag.json')
       .then(res => res.json())
@@ -59,7 +59,6 @@ const Detail = () => {
   return (
     <div className="Detail">
       <div className="container">
-        <span>남성복</span>
         <div id="imageContainer">
           {detailData && (
             <DetailImage thumbnail_url={detailData.thumbnail_image_url} />
@@ -94,11 +93,7 @@ const Detail = () => {
               )}
             </div>
           </div>
-          <div className="textDetailBox">
-            <dd className="textArea">
-              우리는 무지막지하지만 무지하게 코딩을 잘하게 될거에요.
-            </dd>
-          </div>
+          <div className="textDetailBox"></div>
           <div className="sizeBtn">
             <span>Color선택</span>
             <button className="rightBtn">옵션다시선택</button>
@@ -110,9 +105,7 @@ const Detail = () => {
                   <ColorImage
                     key={color.id}
                     id={color.id}
-                    thumbnail={color.thumbnail_url}
-                    registerColor={onColorChange}
-                    resetColor={onResetColor}
+                    thumbnail={color.thumbnail}
                   />
                 );
               })}

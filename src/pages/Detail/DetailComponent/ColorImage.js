@@ -1,18 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../DetailComponent/ColorImage.scss';
-const ColorImage = ({ id, thumbnail_url, registerColor, resetColor }) => {
-  const colorChange = () => {
-    registerColor(thumbnail_url);
-  };
-  const resetColorChange = () => {
-    resetColor();
-  };
-
+const ColorImage = ({ id, thumbnail }) => {
   return (
     <div className="detailColorImage">
-      <button onMouseEnter={colorChange} onMouseLeave={resetColorChange}>
-        <img className="colorImage" src={thumbnail_url} alt="colorImg"></img>
-      </button>
+      <img className="colorImage" src={thumbnail} alt=""></img>
     </div>
   );
 };
