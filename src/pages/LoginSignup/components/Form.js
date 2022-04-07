@@ -39,7 +39,11 @@ const Form = ({
                 isValid={signUpValidator[input.type](signInput[input.type])}
               />
             ))}
-        <Button title={title} signCommunication={signCommunication} />
+        <Button
+          title={title}
+          signCommunication={signCommunication}
+          signInput={signInput}
+        />
       </div>
     </FormLayout>
   );

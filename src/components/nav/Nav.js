@@ -25,6 +25,14 @@ const Nav = () => {
     handleLoginStatus();
   };
 
+  const handleMypage = () => {
+    if (localStorage.length) {
+      alert('Coming Soon.');
+    } else {
+      alert('로그인을 진행해주세요.');
+    }
+  };
+
   return (
     <nav className="nav">
       <div className="navBox">
@@ -57,7 +65,11 @@ const Nav = () => {
             )}
 
             <Link to="/">
-              <button type="button" className="btnMypage" />
+              <button
+                type="button"
+                className="btnMypage"
+                onClick={handleMypage}
+              />
             </Link>
             <Link to="/">
               <button type="button" className="btnCart" />
