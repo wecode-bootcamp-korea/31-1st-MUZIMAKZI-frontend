@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './Mens.scss';
+import { useParams } from 'react-router-dom';
 import MensList from './MensComponent/MensList';
 import './MensComponent/MensList.scss';
+import './Mens.scss';
 
 const Mens = () => {
   const [mensList, setMensList] = useState();
+  const params = useParams();
 
   useEffect(() => {
-    fetch(fetch('/data/mensListData.json'))
+    fetch(fetch(`http://127.0.0.1:8000/products/categories/${params.id}/types`))
       .then(res => res.json())
       .then(res => setMensList(res))
       .catch(e => console.error(e));
@@ -31,7 +33,6 @@ const Mens = () => {
                 return (
                   <MensList
                     key={id}
-                    id={id}
                     name={name}
                     thumbnail={thumbnail}
                   />

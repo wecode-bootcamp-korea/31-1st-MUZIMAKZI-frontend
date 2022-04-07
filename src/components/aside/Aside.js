@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Aside.scss';
 
-import { Link } from 'react-router-dom';
-import './Aside.scss';
-
 const Aside = () => {
   const [categoryList, setCategoryList] = useState([]);
   const navigate = useNavigate();
