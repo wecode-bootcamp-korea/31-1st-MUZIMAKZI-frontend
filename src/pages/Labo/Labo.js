@@ -5,11 +5,7 @@ import './Labo.scss';
 const Labo = () => {
   return (
     <div className="labo">
-<<<<<<< HEAD
       <div className="pageContainer">
-=======
-      <article className="container">
->>>>>>> master
         <div className="laboImg">
           <img src="/images/listpage/MUZI1.jpg" alt="MUZI MAKZI" />
         </div>
