@@ -40,7 +40,7 @@ const Nav = () => {
           <Link to="/" className="Logo">
             <span className="muziLogo">MUZI</span>
             <img
-              src="images/nav/MUZISIDE.png"
+              src="/images/nav/MUZISIDE.png"
               alt="SideLogo"
               className="SideLogoImg"
             />
@@ -51,11 +51,13 @@ const Nav = () => {
           </div>
           <div className="linkItem">
             {isLogin ? (
-              <button
-                type="button"
-                className="btnLogout"
-                onClick={handleLogout}
-              />
+              <Link to="/">
+                <button
+                  type="button"
+                  className="btnLogout"
+                  onClick={handleLogout}
+                />
+              </Link>
             ) : (
               <button
                 type="button"
@@ -71,9 +73,19 @@ const Nav = () => {
                 onClick={handleMypage}
               />
             </Link>
-            <Link to="/">
-              <button type="button" className="btnCart" />
-            </Link>
+            {localStorage.length ? (
+              <Link to="/cart">
+                <button type="button" className="btnCart" />
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  alert('먼저 로그인 해주세요');
+                }}
+                type="button"
+                className="btnCart"
+              />
+            )}
           </div>
         </div>
         <div className="navBottom">
