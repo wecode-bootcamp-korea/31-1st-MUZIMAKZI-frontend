@@ -4,7 +4,7 @@ const CartItemCell = ({
   cartItem: { name, size, color, price, thumbnail_url, quantity, cart_id },
 }) => {
   const [itemCount, setItemCount] = useState(quantity);
-  console.log(cart_id);
+
   const sum = price * quantity;
 
   const handleCount = e => {
@@ -16,7 +16,7 @@ const CartItemCell = ({
     alert('수량을 변경하시겠습니까?');
     alert('변경되었습니다.');
   };
-  console.log(localStorage.getItem('TOKEN'));
+
   const deleteItem = () => {
     fetch('http://10.58.2.42:8000/carts', {
       method: 'DELETE',
@@ -28,10 +28,12 @@ const CartItemCell = ({
       },
     })
       .then(response => response.json())
-      .then(data => {
-        console.log(data.message);
-      });
+      .then(
+        response =>
+          response.message === 'DETETED' && alert('항목이 삭제되었습니다')
+      );
   };
+
   return (
     <tr className="CartItemCell">
       <td className="prdImg">

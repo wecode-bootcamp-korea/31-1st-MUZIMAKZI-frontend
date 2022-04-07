@@ -18,7 +18,7 @@ const Cart = () => {
         data.message === 'NO ITEM IN CART' || setCartItems(data.message);
       });
   }, []);
-  console.log(cartItems);
+
   return (
     <div className="cart">
       <div className="pageContainer">
