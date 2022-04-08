@@ -2,6 +2,7 @@
 .CartItemCell {
   .prdImg {
     border-bottom: 1px dotted gray;
+
     @include flexCenter;
     span {
       text-align: left;
@@ -9,6 +10,8 @@
     }
     img {
       border: 1px solid $muziGray;
+      width: 100px;
+      height: 100px;
     }
   }
   .prdInfo {

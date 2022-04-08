@@ -6,7 +6,7 @@ const Button = ({ colorSelectId, sizeSelectId }) => {
   const params = useParams();
 
   const addToCart = () => {
-    fetch(`http://10.58.5.51:8000/carts`, {
+    fetch(`http://10.58.7.109:8000/carts`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),

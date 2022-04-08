@@ -21,7 +21,7 @@ const Detail = () => {
   const params = useParams();
   console.log(detailData);
   useEffect(() => {
-    fetch(`http://10.58.5.51:8000/products/${params.id}`)
+    fetch(`http://10.58.7.109:8000/products/${params.id}`)
       .then(res => res.json())
       .then(res => {
         setDetailData(res.message);

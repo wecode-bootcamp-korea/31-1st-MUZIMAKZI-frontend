@@ -8,7 +8,7 @@ const Cart = () => {
   let shippingFee = 3000;
 
   const getCartData = () => {
-    fetch('http://10.58.5.51:8000/carts', {
+    fetch('http://10.58.7.109:8000/carts', {
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
       },

@@ -19,7 +19,7 @@ const CartItemCell = ({
   };
 
   const deleteItem = () => {
-    fetch(`http://10.58.5.51:8000/carts?cart_id=${cart_id}`, {
+    fetch(`http://10.58.7.109:8000/carts?cart_id=${cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),

@@ -8,7 +8,7 @@ const Aside = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://10.58.5.51:8000/main')
+    fetch('http://10.58.7.109:8000/main')
       .then(res => res.json())
       .then(data => {
         setCategoryList(data.side_info);
