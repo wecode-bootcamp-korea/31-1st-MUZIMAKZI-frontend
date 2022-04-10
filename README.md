@@ -3,10 +3,20 @@
 ## Member: 윤서영, 임재혁, 문혜성, 노규현
 
 
+
 ## Introduction
 - 기간: 2022-03-28 ~ 2022-04-08
 - 구성: Front-end 4명(with 서영, 재혁, 혜성, 규현), Back-end 2명 (with 강호, 재홍)
 <img width="446" alt="스크린샷 2022-04-10 오후 3 16 25" src="https://user-images.githubusercontent.com/91510831/162605093-cf95817f-9fb3-4ea2-8a54-fd494e326ce7.png">
+
+
+## Tech
+
+
+1. React.js
+2. SASS
+3. Git
+
 
 ## Our System
 ![초반](https://user-images.githubusercontent.com/91510831/162604253-18d5c3ab-d20b-4140-a73b-43d1b2079c12.gif)
@@ -16,17 +26,3 @@
 
 ## Data Modeling
 <img width="1320" alt="image" src="https://user-images.githubusercontent.com/91510831/162604626-6a255d08-087e-4378-8a46-96ccef7f6a31.png">
-
-## Tech
-
-|Index|Use|Description|
-|:---:|:---:|:---:|
-|1|React.js
-|2|SASS
-|3|Git
-
-
-
-## Notion
-[1] https://quirky-eocursor-b74.notion.site/muzimakzi-first-project-6f174d1eb5be404c93a1ce9cc905dce5 <br>
-[2] https://quirky-eocursor-b74.notion.site/muzimakzi-API-4504012f7ad34371bdfa1d2bb4bf9bd7
