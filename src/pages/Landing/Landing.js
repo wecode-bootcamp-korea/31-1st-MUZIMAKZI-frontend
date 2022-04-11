@@ -8,7 +8,7 @@ const Landing = () => {
   const [imgList, setImgList] = useState({});
 
   useEffect(() => {
-    fetch('/data/swiperItems.json')
+    fetch('http://10.58.7.109:8000/main')
       .then(res => res.json())
       .then(data => {
         setImgList(data);

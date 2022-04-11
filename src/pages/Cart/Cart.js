@@ -7,8 +7,8 @@ const Cart = () => {
   let priceSum = 0;
   let shippingFee = 3000;
 
-  useEffect(() => {
-    fetch('http://10.58.2.42:8000/carts', {
+  const getCartData = () => {
+    fetch('http://10.58.7.109:8000/carts', {
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
       },
@@ -17,6 +17,10 @@ const Cart = () => {
       .then(data => {
         data.message === 'NO ITEM IN CART' || setCartItems(data.message);
       });
+  };
+
+  useEffect(() => {
+    getCartData();
   }, []);
 
   return (
@@ -60,7 +64,13 @@ const Cart = () => {
               cartItems.map((cartItem, idx) => {
                 priceSum += cartItem.price * cartItem.quantity;
                 shippingFee = priceSum > 30000 && 0;
-                return <CartItemCell key={idx} cartItem={cartItem} />;
+                return (
+                  <CartItemCell
+                    key={idx}
+                    cartItem={cartItem}
+                    getCartData={getCartData}
+                  />
+                );
               })
             ) : (
               <EmptyCart />

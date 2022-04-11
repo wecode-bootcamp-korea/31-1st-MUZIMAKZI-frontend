@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './CartItemCell.scss';
 const CartItemCell = ({
   cartItem: { name, size, color, price, thumbnail_url, quantity, cart_id },
+  getCartData,
 }) => {
   const [itemCount, setItemCount] = useState(quantity);
 
@@ -18,20 +19,14 @@ const CartItemCell = ({
   };
 
   const deleteItem = () => {
-    fetch('http://10.58.2.42:8000/carts', {
+    fetch(`http://10.58.7.109:8000/carts?cart_id=${cart_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: localStorage.getItem('TOKEN'),
       },
-      body: {
-        cart_id: cart_id,
-      },
     })
-      .then(response => response.json())
-      .then(
-        response =>
-          response.message === 'DETETED' && alert('항목이 삭제되었습니다')
-      );
+      .then(res => alert('삭제 되었습니다.'))
+      .then(setTimeout(() => getCartData(), 300));
   };
 
   return (

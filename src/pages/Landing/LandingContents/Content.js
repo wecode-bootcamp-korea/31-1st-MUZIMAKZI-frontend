@@ -13,8 +13,8 @@ const Content = ({ firstContentsList }) => {
       </div>
       <ul className="firstBottom">
         {firstContentsList &&
-          firstContentsList.map(content => {
-            return <LandingContents key={content.id} {...content} />;
+          firstContentsList.map((content, idx) => {
+            return <LandingContents key={idx} {...content} />;
           })}
       </ul>
     </div>
