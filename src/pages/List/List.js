@@ -10,7 +10,7 @@ const List = () => {
   const location = useLocation();
 
   const womensList = location.search.split('?')[1].charAt(8);
-  const API_URL = `http://10.58.7.109:8000/products/categories${location.search}`;
+  const API_URL = `http://3.131.157.10:8000/products/categories${location.search}`;
 
   const getFetch = () => {
     fetch(`${API_URL}`)

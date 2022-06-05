@@ -21,7 +21,7 @@ const LoginSignup = ({ handleLoginModal }) => {
 
   const navigate = useNavigate();
 
-  const goToMain = token => {
+  const goToMain = () => {
     navigate('/');
     if (token) {
       localStorage.setItem('TOKEN', token);
@@ -32,7 +32,7 @@ const LoginSignup = ({ handleLoginModal }) => {
 
   const signInCommunication = signInput => {
     const { email, password } = signInput;
-    fetch('http://10.58.7.109:8000/users/signin', {
+    fetch('http://3.131.157.10:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: email,
@@ -49,7 +49,7 @@ const LoginSignup = ({ handleLoginModal }) => {
 
   const signUpCommunication = signInput => {
     const { firstName, lastName, email, password, phoneNumber } = signInput;
-    fetch('http://10.58.7.109:8000/users/signup', {
+    fetch('http://3.131.157.10:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         first_name: firstName,

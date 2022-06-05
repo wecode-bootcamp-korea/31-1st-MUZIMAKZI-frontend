@@ -10,7 +10,7 @@ const Mens = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://10.58.7.109:8000/products/categories/${params.id}/types`)
+    fetch(`http://3.131.157.10:8000/products/categories/${params.id}/types`)
       .then(res => res.json())
       .then(res => {
         setMensList(res.message);
