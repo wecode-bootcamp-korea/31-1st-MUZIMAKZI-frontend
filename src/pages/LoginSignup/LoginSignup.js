@@ -102,6 +102,8 @@ const LoginSignup = ({ handleLoginModal }) => {
       alert('이미 가입된 회원입니다.');
     }
   };
+  // Fix Me : 로그인 로직 수정
+
   return (
     <div className="loginSignup">
       <div className="modalBg" onClick={handleLoginModal} />
