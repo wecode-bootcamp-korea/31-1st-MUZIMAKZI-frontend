@@ -102,7 +102,8 @@ const LoginSignup = ({ handleLoginModal }) => {
       alert('이미 가입된 회원입니다.');
     }
   };
-  // Fix Me : 로그인 로직 수정
+  // Fix Me : 로그인 로직 수정 예쩡
+  console.log(signInInput);
 
   return (
     <div className="loginSignup">
